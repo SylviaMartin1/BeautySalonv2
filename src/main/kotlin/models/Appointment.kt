@@ -15,3 +15,9 @@ data class Appointment(var appointmentId: Int = 0,
                        var cost: Int,
                        var rating: Int,
                        var isConfirmed: Boolean)
+{
+
+
+
+}
+

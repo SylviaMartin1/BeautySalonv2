@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f4d87e7-65f7-414c-b707-75521f7541c4" name="Changes" comment="Implement functionality to add appointments to the mutable set">
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
+    <list default="true" id="7f4d87e7-65f7-414c-b707-75521f7541c4" name="Changes" comment="Create appointment and client data models">
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/controllers/ClientAPI.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/controllers/ClientAPI.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/models/Appointment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/models/Appointment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/models/Client.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/models/Client.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/utils/Utilities.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/utils/Utilities.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,14 +64,15 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "implement-create-functions",
+    "git-widget-placeholder": "manipulate-collections",
     "last_opened_file_path": "C:/Users/sylvi/OneDrive - South East Technological University (Waterford Campus)/Semester Three/Software Development Tools/BeautySalonv2",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.notifications"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.BeautySalonV2 [build]">
+  <component name="RunManager">
     <configuration name="BeautySalonV2 [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -249,7 +253,31 @@
       <option name="project" value="LOCAL" />
       <updated>1701525616361</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Create addClient() function">
+      <option name="closed" value="true" />
+      <created>1701532373458</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1701532373458</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Ensure use of DRY code">
+      <option name="closed" value="true" />
+      <created>1701532957124</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1701532957124</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Create appointment and client data models">
+      <option name="closed" value="true" />
+      <created>1701542585399</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1701542585399</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -289,6 +317,13 @@
     <MESSAGE value="Add skeleton of methods to handle menu" />
     <MESSAGE value="Implement functionality to add clients to the arrayList" />
     <MESSAGE value="Implement functionality to add appointments to the mutable set" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement functionality to add appointments to the mutable set" />
+    <MESSAGE value="Create addClient() function" />
+    <MESSAGE value="Ensure use of DRY code" />
+    <MESSAGE value="Create appointment and client data models" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create appointment and client data models" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
