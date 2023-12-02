@@ -15,7 +15,8 @@ data class Client(
     var county: String,
     var email: String,
     var phone: Int,
-    var allergy: String // -- list of Strings
+    var allergy: String, // -- list of Strings
+    var appointments : MutableSet<Appointment> = mutableSetOf()
 )
 
 
