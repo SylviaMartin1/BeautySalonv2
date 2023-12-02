@@ -1,0 +1,411 @@
+Index: src/main/kotlin/Main.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>fun main(args: Array<String>) {\r\n    println(\"Hello World!\")\r\n\r\n    // Try adding program arguments via Run/Debug configuration.\r\n    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.\r\n    println(\"Program arguments: ${args.joinToString()}\")\r\n    //Test\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/kotlin/Main.kt b/src/main/kotlin/Main.kt
+--- a/src/main/kotlin/Main.kt	
++++ b/src/main/kotlin/Main.kt	
+@@ -1,8 +1,4 @@
+-fun main(args: Array<String>) {
+-    println("Hello World!")
++
+ 
+-    // Try adding program arguments via Run/Debug configuration.
+-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
+-    println("Program arguments: ${args.joinToString()}")
+-    //Test
+-}
++
++
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"7f4d87e7-65f7-414c-b707-75521f7541c4\" name=\"Changes\" comment=\"Testing commit and push\">\r\n      <change afterPath=\"$PROJECT_DIR$/.gitignore\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/build.gradle.kts\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/gradle.properties\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/gradlew\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/gradlew.bat\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/settings.gradle.kts\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/kotlin/Main.kt\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ExternalProjectsData\">\r\n    <projectState path=\"$PROJECT_DIR$\">\r\n      <ProjectState />\r\n    </projectState>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 7\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2YEdMc4JAYn00NOixo5Zs3LfgY5\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;android.gradle.sync.needed&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"7f4d87e7-65f7-414c-b707-75521f7541c4\" name=\"Changes\" comment=\"\" />\r\n      <created>1700094625940</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1700094625940</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Testing commit and push\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1700095074317</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1700095074317</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"origin/master\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Testing commit and push\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Testing commit and push\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,17 +4,17 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="7f4d87e7-65f7-414c-b707-75521f7541c4" name="Changes" comment="Testing commit and push">
+-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
++    <list default="true" id="7f4d87e7-65f7-414c-b707-75521f7541c4" name="Changes" comment="Create functions to manipulate client arrayList">
++      <change afterPath="$PROJECT_DIR$/src/main/kotlin/utils/ScannerInput.kt" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main/kotlin/utils/Utilities.kt" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/kotlin/controllers/ClientAPI.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/controllers/ClientAPI.kt" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/kotlin/models/Appointment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/models/Appointment.kt" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/kotlin/models/Client.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/models/Client.kt" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -26,7 +26,35 @@
+       <ProjectState />
+     </projectState>
+   </component>
++  <component name="ExternalProjectsManager">
++    <system id="GRADLE">
++      <state>
++        <task path="$PROJECT_DIR$">
++          <activation />
++        </task>
++        <projects_view>
++          <tree_state>
++            <expand />
++            <select />
++          </tree_state>
++        </projects_view>
++      </state>
++    </system>
++  </component>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="Kotlin Object" />
++        <option value="Kotlin Class" />
++      </list>
++    </option>
++  </component>
+   <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="master" />
++      </map>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="ProjectColorInfo">{
+@@ -38,17 +66,69 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;android.gradle.sync.needed&quot;: &quot;true&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "git-widget-placeholder": "skeleton-version-of-app",
++    "last_opened_file_path": "C:/Users/sylvi/OneDrive - South East Technological University (Waterford Campus)/Semester Three/Software Development Tools/BeautySalonv2",
++    "project.structure.last.edited": "Modules",
++    "project.structure.proportion": "0.0",
++    "project.structure.side.proportion": "0.0"
+   }
+-}</component>
++}]]></component>
++  <component name="RunManager" selected="Gradle.BeautySalonV2 [build]">
++    <configuration name="BeautySalonV2 [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
++      <ExternalSystemSettings>
++        <option name="executionName" />
++        <option name="externalProjectPath" value="$PROJECT_DIR$" />
++        <option name="externalSystemIdString" value="GRADLE" />
++        <option name="scriptParameters" />
++        <option name="taskDescriptions">
++          <list />
++        </option>
++        <option name="taskNames">
++          <list>
++            <option value="build" />
++          </list>
++        </option>
++        <option name="vmOptions" />
++      </ExternalSystemSettings>
++      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
++      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
++      <DebugAllEnabled>false</DebugAllEnabled>
++      <RunAsTest>false</RunAsTest>
++      <method v="2" />
++    </configuration>
++    <configuration name="BeautySalonV2 [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
++      <ExternalSystemSettings>
++        <option name="executionName" />
++        <option name="externalProjectPath" value="$PROJECT_DIR$" />
++        <option name="externalSystemIdString" value="GRADLE" />
++        <option name="scriptParameters" />
++        <option name="taskDescriptions">
++          <list />
++        </option>
++        <option name="taskNames">
++          <list>
++            <option value="clean" />
++          </list>
++        </option>
++        <option name="vmOptions" />
++      </ExternalSystemSettings>
++      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
++      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
++      <DebugAllEnabled>false</DebugAllEnabled>
++      <RunAsTest>false</RunAsTest>
++      <method v="2" />
++    </configuration>
++    <recent_temporary>
++      <list>
++        <item itemvalue="Gradle.BeautySalonV2 [build]" />
++        <item itemvalue="Gradle.BeautySalonV2 [clean]" />
++      </list>
++    </recent_temporary>
++  </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+@@ -66,7 +146,47 @@
+       <option name="project" value="LOCAL" />
+       <updated>1700095074317</updated>
+     </task>
+-    <option name="localTasksCounter" value="2" />
++    <task id="LOCAL-00002" summary="Testing commit and push">
++      <option name="closed" value="true" />
++      <created>1700095420725</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1700095420725</updated>
++    </task>
++    <task id="LOCAL-00003" summary="Testing if everything is working">
++      <option name="closed" value="true" />
++      <created>1700095481712</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1700095481712</updated>
++    </task>
++    <task id="LOCAL-00004" summary="Create Client and Appointment data classes">
++      <option name="closed" value="true" />
++      <created>1701254738842</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1701254738842</updated>
++    </task>
++    <task id="LOCAL-00005" summary="Create functions to manipulate appointment set">
++      <option name="closed" value="true" />
++      <created>1701344814489</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1701344814489</updated>
++    </task>
++    <task id="LOCAL-00006" summary="Create functions to manipulate client arrayList">
++      <option name="closed" value="true" />
++      <created>1701348825649</created>
++      <option name="number" value="00006" />
++      <option name="presentableId" value="LOCAL-00006" />
++      <option name="project" value="LOCAL" />
++      <updated>1701348825649</updated>
++    </task>
++    <option name="localTasksCounter" value="7" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -94,6 +214,10 @@
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="Testing commit and push" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Testing commit and push" />
++    <MESSAGE value="Testing if everything is working" />
++    <MESSAGE value="Create Client and Appointment data classes" />
++    <MESSAGE value="Create functions to manipulate appointment set" />
++    <MESSAGE value="Create functions to manipulate client arrayList" />
++    <option name="LAST_COMMIT_MESSAGE" value="Create functions to manipulate client arrayList" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: build.gradle.kts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\r\n    kotlin(\"jvm\") version \"1.9.0\"\r\n    application\r\n}\r\n\r\ngroup = \"me.sylvi\"\r\nversion = \"1.0-SNAPSHOT\"\r\n\r\nrepositories {\r\n    mavenCentral()\r\n}\r\n\r\ndependencies {\r\n    testImplementation(kotlin(\"test\"))\r\n}\r\n\r\ntasks.test {\r\n    useJUnitPlatform()\r\n}\r\n\r\nkotlin {\r\n    jvmToolchain(8)\r\n}\r\n\r\napplication {\r\n    mainClass.set(\"MainKt\")\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/build.gradle.kts b/build.gradle.kts
+--- a/build.gradle.kts	
++++ b/build.gradle.kts	
+@@ -1,9 +1,11 @@
++import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
++
+ plugins {
+     kotlin("jvm") version "1.9.0"
+     application
+ }
+ 
+-group = "me.sylvi"
++group = "ie.setu"
+ version = "1.0-SNAPSHOT"
+ 
+ repositories {
+@@ -12,14 +14,16 @@
+ 
+ dependencies {
+     testImplementation(kotlin("test"))
++    implementation("io.github.microutils:kotlin-logging:3.0.5")
++    implementation("org.slf4j:slf4j-simple:2.0.9")
+ }
+ 
+ tasks.test {
+     useJUnitPlatform()
+ }
+ 
+-kotlin {
+-    jvmToolchain(8)
++tasks.withType<KotlinCompile>() {
++    kotlinOptions.jvmTarget = "1.8"
+ }
+ 
+ application {
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_1_8\" project-jdk-name=\"17\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	
++++ b/.idea/misc.xml	
+@@ -1,7 +1,7 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ExternalStorageConfigurationManager" enabled="true" />
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="17" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"VcsDirectoryMappings\">\r\n    <mapping directory=\"$PROJECT_DIR$\" vcs=\"Git\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+--- a/.idea/vcs.xml	
++++ b/.idea/vcs.xml	
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="VcsDirectoryMappings">
+-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++    <mapping directory="" vcs="Git" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/main/kotlin/utils/ScannerInput.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/kotlin/utils/ScannerInput.kt b/src/main/kotlin/utils/ScannerInput.kt
+new file mode 100644
+--- /dev/null	
++++ b/src/main/kotlin/utils/ScannerInput.kt	
+@@ -0,0 +1,79 @@
++package utils
++
++import java.util.*
++
++/**
++ * This class provides methods for the robust handling of I/O using Scanner.
++ * It creates a new Scanner object for each read from the user, thereby eliminating the Scanner bug
++ * (where the buffers don't flush correctly after an int read).
++ *
++ * The methods also parse the numeric data entered to ensure it is correct. If it isn't correct,
++ * the user is prompted to enter it again.
++ *
++ * @author Siobhan Drohan, Mairead Meagher
++ * @since 1.0
++ */
++
++object ScannerInput {
++    /**
++     * Read an int from the user.
++     * If the entered data isn't actually an int the user is prompted again to enter the int.
++     *
++     * @param prompt  The information printed to the console for the user to read
++     * @return The number read from the user and verified as an int.
++     */
++    @JvmStatic
++    fun readNextInt(prompt: String?): Int {
++        do {
++            try {
++                print(prompt)
++                return Scanner(System.`in`).next().toInt()
++            } catch (e: NumberFormatException) {
++                System.err.println("\tEnter a number please.")
++            }
++        } while (true)
++    }
++
++    /**
++     * Read a double from the user.  If the entered data isn't actually a double,
++     * the user is prompted again to enter the double.
++     *
++     * @param prompt  The information printed to the console for the user to read
++     * @return The number read from the user and verified as a double.
++     */
++    @JvmStatic
++    fun readNextDouble(prompt: String?): Double {
++        do {
++            try {
++                print(prompt)
++                return Scanner(System.`in`).next().toDouble()
++            } catch (e: NumberFormatException) {
++                System.err.println("\tEnter a number please.")
++            }
++        } while (true)
++    }
++
++    /**
++     * Read a line of text from the user.  There is no validation done on the entered data.
++     *
++     * @param prompt  The information printed to the console for the user to read
++     * @return The String read from the user.
++     */
++    @JvmStatic
++    fun readNextLine(prompt: String?): String {
++        print(prompt)
++        return Scanner(System.`in`).nextLine()
++    }
++
++    /**
++     * Read a single character of text from the user.  There is no validation done on the entered data.
++     *
++     * @param prompt  The information printed to the console for the user to read
++     * @return The char read from the user.
++     */
++    @JvmStatic
++    fun readNextChar(prompt: String?): Char {
++        print(prompt)
++        return Scanner(System.`in`).next()[0]
++    }
++}
+\ No newline at end of file
+diff --git a/src/main/kotlin/utils/Utilities.kt b/src/main/kotlin/utils/Utilities.kt
+new file mode 100644

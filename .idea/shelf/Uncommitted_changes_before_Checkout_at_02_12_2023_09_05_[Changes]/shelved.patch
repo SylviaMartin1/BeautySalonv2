@@ -1,0 +1,271 @@
+Index: src/main/kotlin/controllers/ClientAPI.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>//1. Packages\r\n/**\r\n * Organises classes which handle user input\r\n */\r\npackage controllers\r\n\r\n\r\n//2. Import Statements\r\n/**\r\n * 1. Imports 'Client' so that it can be used in this file\r\n * 2. Imports formatListString method from Utilities class in Utils package so that it can be used here\r\n */\r\nimport models.Client\r\nimport utils.Utilities.formatListString\r\nclass ClientAPI\r\n{\r\n    //3. Models\r\n    /**\r\n     *1. ArrayList of Clients\r\n     */\r\n    private var clients = ArrayList<Client>()\r\n\r\n    //4. Functions\r\n    //Create Functions\r\n    /**\r\n     *1. adds a client to the arrayList\r\n     */\r\n    fun add(client: Client): Boolean\r\n    {\r\n        client.clientId = getId()\r\n        return clients.add(client)\r\n    }\r\n\r\n    //Read Functions\r\n    /**\r\n     *2. lists all clients stored in the arrayList\r\n     */\r\n    fun listAllClients() =\r\n        if (clients.isEmpty()) \"No clients stored\"\r\n        else formatListString(clients)\r\n\r\n\r\n    /**\r\n     * 3. list all clients with unpaid appointments\r\n     */\r\n    fun listAllClientsWithUnPaidAppointments() =\r\n        if (numberOfClientsWithUnPaidAppointments() == 0) \"No clients with unpaid appointments stored\"\r\n        else formatListString(clients.filter { client-> !client.isPaid })\r\n\r\n\r\n    /**\r\n     * 4. lists all clients with paid appointments\r\n     */\r\n    fun listAllClientsWithPaidAppointments() =\r\n        if (numberOfClientsWithPaidAppointments() == 0) \"No clients with paid appointments stored\"\r\n        else formatListString(clients.filter{ client -> client.isPaid})\r\n\r\n\r\n\r\n    //Count Functions\r\n    /**\r\n     * 5. counts all clients stored in the arrayList\r\n     */\r\n    fun numberOfClients() = clients.size\r\n\r\n    /**\r\n     * 6. counts all clients with unpaid appointments\r\n     */\r\n    fun numberOfClientsWithUnPaidAppointments(): Int = clients.count { client: Client -> client.isPaid }\r\n\r\n    /**\r\n     * 7. counts all clients with paid appointments\r\n     */\r\n    fun numberOfClientsWithPaidAppointments(): Int = clients.count { client: Client -> !client.isPaid }\r\n\r\n\r\n    //Delete Functions\r\n    /**\r\n     * 8. delete a client from the arrayList\r\n     */\r\n    fun delete(id: Int) = clients.removeIf { client -> client.clientId == id }\r\n\r\n\r\n    //Helper Functions\r\n    /**\r\n     * 9. Function to get a client's ID\r\n     */\r\n    private var lastId = 0\r\n    private fun getId() = lastId++\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n}
+===================================================================
+diff --git a/src/main/kotlin/controllers/ClientAPI.kt b/src/main/kotlin/controllers/ClientAPI.kt
+--- a/src/main/kotlin/controllers/ClientAPI.kt	
++++ b/src/main/kotlin/controllers/ClientAPI.kt	
+@@ -1,100 +1,0 @@
+-//1. Packages
+-/**
+- * Organises classes which handle user input
+- */
+-package controllers
+-
+-
+-//2. Import Statements
+-/**
+- * 1. Imports 'Client' so that it can be used in this file
+- * 2. Imports formatListString method from Utilities class in Utils package so that it can be used here
+- */
+-import models.Client
+-import utils.Utilities.formatListString
+-class ClientAPI
+-{
+-    //3. Models
+-    /**
+-     *1. ArrayList of Clients
+-     */
+-    private var clients = ArrayList<Client>()
+-
+-    //4. Functions
+-    //Create Functions
+-    /**
+-     *1. adds a client to the arrayList
+-     */
+-    fun add(client: Client): Boolean
+-    {
+-        client.clientId = getId()
+-        return clients.add(client)
+-    }
+-
+-    //Read Functions
+-    /**
+-     *2. lists all clients stored in the arrayList
+-     */
+-    fun listAllClients() =
+-        if (clients.isEmpty()) "No clients stored"
+-        else formatListString(clients)
+-
+-
+-    /**
+-     * 3. list all clients with unpaid appointments
+-     */
+-    fun listAllClientsWithUnPaidAppointments() =
+-        if (numberOfClientsWithUnPaidAppointments() == 0) "No clients with unpaid appointments stored"
+-        else formatListString(clients.filter { client-> !client.isPaid })
+-
+-
+-    /**
+-     * 4. lists all clients with paid appointments
+-     */
+-    fun listAllClientsWithPaidAppointments() =
+-        if (numberOfClientsWithPaidAppointments() == 0) "No clients with paid appointments stored"
+-        else formatListString(clients.filter{ client -> client.isPaid})
+-
+-
+-
+-    //Count Functions
+-    /**
+-     * 5. counts all clients stored in the arrayList
+-     */
+-    fun numberOfClients() = clients.size
+-
+-    /**
+-     * 6. counts all clients with unpaid appointments
+-     */
+-    fun numberOfClientsWithUnPaidAppointments(): Int = clients.count { client: Client -> client.isPaid }
+-
+-    /**
+-     * 7. counts all clients with paid appointments
+-     */
+-    fun numberOfClientsWithPaidAppointments(): Int = clients.count { client: Client -> !client.isPaid }
+-
+-
+-    //Delete Functions
+-    /**
+-     * 8. delete a client from the arrayList
+-     */
+-    fun delete(id: Int) = clients.removeIf { client -> client.clientId == id }
+-
+-
+-    //Helper Functions
+-    /**
+-     * 9. Function to get a client's ID
+-     */
+-    private var lastId = 0
+-    private fun getId() = lastId++
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-}
+\ No newline at end of file
+Index: src/main/kotlin/models/Client.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>//1. Packages\r\n\r\npackage models\r\n\r\nimport utils.Utilities\r\n\r\n\r\n//2. Classes\r\n/**\r\n * Data class to store all data relating to Clients\r\n */\r\ndata class Client(var clientId: String,\r\n                  var firstName: String,\r\n                  var lastName: String,\r\n                  var street: String,\r\n                  var county: String,\r\n                  var email: String,\r\n                  var phone: Int,\r\n                  var isAppointmentCancelled:Boolean,\r\n                  var allergy: String, //allergy - list of strings\r\n                  var appointments : MutableSet<Appointment> = mutableSetOf()) //set of appointments that a client can have\r\n{\r\n  //3. Functions to manage set of appointments\r\n    //Create functions\r\n    /**\r\n     * 1. Function to add an appointment to the set of appointments\r\n     */\r\n    fun addAppointment(appointment: Appointment) : Boolean\r\n    {\r\n        appointment.appointmentId = getAppointmentId()\r\n        return appointments.add(appointment)\r\n    }\r\n\r\n\r\n    //Read functions\r\n    /**\r\n     * 2. Function to list all the appointments in the set of appointments\r\n     */\r\n    fun listAppointments() =\r\n        if (appointments.isEmpty())  \"\\tNO APPOINTMENTS ADDED\"\r\n        else  Utilities.formatSetString(appointments)\r\n\r\n\r\n    //Count functions\r\n    /**\r\n     * 3. Function to count all the appointments in the set of appointments\r\n     */\r\n    fun numberOfAppointments() = appointments.size\r\n\r\n\r\n    //Update functions\r\n    /**\r\n     * 4. Function to update an appointment\r\n     */\r\n    fun update(id: Int, newAppointment : Appointment): Boolean\r\n    {\r\n        val foundAppointment = findAppointmentById(id)\r\n\r\n        //if the object exists, use the details passed in the newAppointment parameter to\r\n        //update the object found in the Set\r\n        if (foundAppointment != null){\r\n            foundAppointment.time = newAppointment.time\r\n            foundAppointment.date = newAppointment.date\r\n            foundAppointment.treatment = newAppointment.treatment\r\n            foundAppointment.cost = newAppointment.cost\r\n            foundAppointment.isPaid = newAppointment.isPaid\r\n            foundAppointment.clientRating = newAppointment.clientRating\r\n            return true\r\n        }\r\n\r\n        //if the object was not found, return false, indicating that the update was not successful\r\n        return false\r\n    }\r\n\r\n    //Delete functions\r\n    /**\r\n     * 5. Function to delete an appointment from the set of appointments\r\n     */\r\n    fun delete(id: Int): Boolean {\r\n        return appointments.removeIf { appointment -> appointment.appointmentId == id}\r\n    }\r\n\r\n\r\n    //Search Functions\r\n    /**\r\n     * 6. Function to find an appointment by its ID\r\n     */\r\n    fun findAppointmentById(id: Int): Appointment?\r\n    {\r\n        return appointments.find{ appointment -> appointment.appointmentId == id }\r\n    }\r\n\r\n    //Helper Functions\r\n\r\n    /**\r\n     * 7. Helper Function to get an appointment's id\r\n     */\r\n    private var lastAppointmentId = 0\r\n    private fun getAppointmentId() = lastAppointmentId++\r\n\r\n    /**\r\n     * 8. Helper Function to write client details in string format\r\n     */\r\n    override fun toString(): String {\r\n        val cancelled = if (isAppointmentCancelled) \"Yes\" else \"No\"\r\n        return \"$clientId: $firstName $lastName, Street($street), County($county), Email($email), Phone($phone), Cancelled($cancelled), Allergy($allergy), \\n${listAppointments()}\"\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n
+===================================================================
+diff --git a/src/main/kotlin/models/Client.kt b/src/main/kotlin/models/Client.kt
+--- a/src/main/kotlin/models/Client.kt	
++++ b/src/main/kotlin/models/Client.kt	
+@@ -1,125 +1,0 @@
+-//1. Packages
+-
+-package models
+-
+-import utils.Utilities
+-
+-
+-//2. Classes
+-/**
+- * Data class to store all data relating to Clients
+- */
+-data class Client(var clientId: String,
+-                  var firstName: String,
+-                  var lastName: String,
+-                  var street: String,
+-                  var county: String,
+-                  var email: String,
+-                  var phone: Int,
+-                  var isAppointmentCancelled:Boolean,
+-                  var allergy: String, //allergy - list of strings
+-                  var appointments : MutableSet<Appointment> = mutableSetOf()) //set of appointments that a client can have
+-{
+-  //3. Functions to manage set of appointments
+-    //Create functions
+-    /**
+-     * 1. Function to add an appointment to the set of appointments
+-     */
+-    fun addAppointment(appointment: Appointment) : Boolean
+-    {
+-        appointment.appointmentId = getAppointmentId()
+-        return appointments.add(appointment)
+-    }
+-
+-
+-    //Read functions
+-    /**
+-     * 2. Function to list all the appointments in the set of appointments
+-     */
+-    fun listAppointments() =
+-        if (appointments.isEmpty())  "\tNO APPOINTMENTS ADDED"
+-        else  Utilities.formatSetString(appointments)
+-
+-
+-    //Count functions
+-    /**
+-     * 3. Function to count all the appointments in the set of appointments
+-     */
+-    fun numberOfAppointments() = appointments.size
+-
+-
+-    //Update functions
+-    /**
+-     * 4. Function to update an appointment
+-     */
+-    fun update(id: Int, newAppointment : Appointment): Boolean
+-    {
+-        val foundAppointment = findAppointmentById(id)
+-
+-        //if the object exists, use the details passed in the newAppointment parameter to
+-        //update the object found in the Set
+-        if (foundAppointment != null){
+-            foundAppointment.time = newAppointment.time
+-            foundAppointment.date = newAppointment.date
+-            foundAppointment.treatment = newAppointment.treatment
+-            foundAppointment.cost = newAppointment.cost
+-            foundAppointment.isPaid = newAppointment.isPaid
+-            foundAppointment.clientRating = newAppointment.clientRating
+-            return true
+-        }
+-
+-        //if the object was not found, return false, indicating that the update was not successful
+-        return false
+-    }
+-
+-    //Delete functions
+-    /**
+-     * 5. Function to delete an appointment from the set of appointments
+-     */
+-    fun delete(id: Int): Boolean {
+-        return appointments.removeIf { appointment -> appointment.appointmentId == id}
+-    }
+-
+-
+-    //Search Functions
+-    /**
+-     * 6. Function to find an appointment by its ID
+-     */
+-    fun findAppointmentById(id: Int): Appointment?
+-    {
+-        return appointments.find{ appointment -> appointment.appointmentId == id }
+-    }
+-
+-    //Helper Functions
+-
+-    /**
+-     * 7. Helper Function to get an appointment's id
+-     */
+-    private var lastAppointmentId = 0
+-    private fun getAppointmentId() = lastAppointmentId++
+-
+-    /**
+-     * 8. Helper Function to write client details in string format
+-     */
+-    override fun toString(): String {
+-        val cancelled = if (isAppointmentCancelled) "Yes" else "No"
+-        return "$clientId: $firstName $lastName, Street($street), County($county), Email($email), Phone($phone), Cancelled($cancelled), Allergy($allergy), \n${listAppointments()}"
+-    }
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-}
+-
+-
+-
+-
+-
+-
+-
+Index: src/main/kotlin/models/Appointment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>//1. Packages\r\n/**\r\n * Organises classes which represent data models\r\n */\r\npackage models\r\n\r\n//2. Classes\r\n/**\r\n * Data class to store all data relating to Appointments\r\n */\r\ndata class Appointment(var appointmentId: Int = 0,\r\n                       var time: String,\r\n                       var date: String,\r\n                       var treatment: String,\r\n                       var cost: Int,\r\n                       var isPaid: Boolean,\r\n                       var clientRating: Int)\r\n\r\n
+===================================================================
+diff --git a/src/main/kotlin/models/Appointment.kt b/src/main/kotlin/models/Appointment.kt
+--- a/src/main/kotlin/models/Appointment.kt	
++++ b/src/main/kotlin/models/Appointment.kt	
+@@ -1,18 +1,0 @@
+-//1. Packages
+-/**
+- * Organises classes which represent data models
+- */
+-package models
+-
+-//2. Classes
+-/**
+- * Data class to store all data relating to Appointments
+- */
+-data class Appointment(var appointmentId: Int = 0,
+-                       var time: String,
+-                       var date: String,
+-                       var treatment: String,
+-                       var cost: Int,
+-                       var isPaid: Boolean,
+-                       var clientRating: Int)
+-
