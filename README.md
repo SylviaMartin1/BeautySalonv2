@@ -1,3 +1,5 @@
-# Beauty Salon App
+# Beauty Salon App :nail_care:
 ![Project Status](https://img.shields.io/badge/status-complete-brightgreen)
-![License](https://img.shields.io/badge/license-SETU-blue.svg)](https://opensource.org/licenses/MIT)
+![License](https://img.shields.io/badge/license-SETU-blue.svg)]
+
+## 
