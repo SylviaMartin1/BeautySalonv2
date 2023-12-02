@@ -6,7 +6,7 @@
 This project is a simple management app created using Gradle Build Software and the Kotlin programming language.
 > "Kotlin is designed to be expressive, concise and powerful. iIt's like a breath of fresh air for developers" - Andrey Breslav, Kotlin Lead Language Developer.
 
-## 	💠[Table of Contents](##Table of Contents)
+## 	💠[Table of Contents](## Table of Contents)
 1. 🔹Introduction
 2. 🔹Features
 3. 🔹Accessibility
