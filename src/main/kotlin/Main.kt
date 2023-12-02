@@ -1,8 +1,38 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+//1. Import Statements
+import controllers.ClientAPI
+import models.Client
+import utils.ScannerInput
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
-    //Test
+//2. Methods
+/**
+ * 1. main()
+ * Starting point of the program
+ * Where the program starts running
+ * Calls runMenu()
+ */
+fun main()
+{
+
 }
+
+/**
+ * 2. mainMenu()
+ * Displays menu
+ * Allows user input
+ */
+fun mainMenu()
+{
+
+}
+/**
+ * 3. runMenu()
+ * Loops mainMenu()
+ * Processes user's choice
+ */
+fun runMenu()
+{
+
+}
+
+
+
