@@ -17,5 +17,25 @@ class ClientAPI
     private var clients = ArrayList<Client>()
 
     //3. Functions to manage client arrayList
+    //Create functions
+    /**
+     * 1. addClient()
+     * Function to add a client to the arrayList
+     */
+    fun addClient(client: Client): Boolean
+    {
+        client.clientId = getClientId()
+        return clients.add(client)
+    }
+
+    //Helper functions
+    /**
+     * 1.getClientId()
+     * Helper function to get a client's ID
+     */
+    private var lastId = 0
+    private fun getClientId() = lastId++
+
+
 
  }
