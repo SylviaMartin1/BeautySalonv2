@@ -9,6 +9,7 @@ package models
  * Groups all appointment data models in the application
  */
 data class Appointment(
+    var appointmentId: Int,
     var time: Int,
     var date: String,
     var treatment: String,
