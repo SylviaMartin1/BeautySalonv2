@@ -1,6 +1,6 @@
 # Beauty Salon App 💅
 ![Project Status](https://img.shields.io/badge/status-complete-brightgreen)
-![License](https://img.shields.io/badge/license-SETU-blue.svg)]
+![License](https://img.shields.io/badge/license-SETU-blue.svg)
 
 ## 	💠[Description](##Description)
 This project is a simple management app created using Gradle Build Software and the Kotlin programming language.
