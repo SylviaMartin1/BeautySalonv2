@@ -20,6 +20,24 @@ data class Client(
     var appointments : MutableSet<Appointment> = mutableSetOf())
 {
     //3. Functions to manage appointments set
+    //Create functions
+    /**
+     * 1. addAppointment()
+     * Function to add an appointment
+     */
+    fun addAppointment(appointment: Appointment) : Boolean {
+        appointment.appointmentId = getAppointmentId()
+        return appointments.add(appointment)
+    }
+
+    //Helper Functions
+    /**
+     * 1. getAppointmentId()
+     * Helper function to get an appointment's Id
+     */
+    private var lastAppointmentId = 0
+    private fun getAppointmentId() = lastAppointmentId++
+
 
 
 

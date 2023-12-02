@@ -20,7 +20,7 @@ class ClientAPI
     //Create functions
     /**
      * 1. addClient()
-     * Function to add a client to the arrayList
+     * Function to add a client
      */
     fun addClient(client: Client): Boolean
     {
