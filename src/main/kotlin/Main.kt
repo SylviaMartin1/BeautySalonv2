@@ -7,6 +7,11 @@ import utils.ScannerInput
 import utils.ScannerInput.readNextDouble
 import utils.ScannerInput.readNextInt
 import utils.ScannerInput.readNextLine
+import utils.ValidateInput.readValidDate
+import utils.ValidateInput.readValidEmail
+import utils.ValidateInput.readValidPhone
+import utils.ValidateInput.readValidTime
+import utils.ValidateInput.readValidTreatment
 import java.io.File
 import kotlin.system.exitProcess
 
@@ -182,8 +187,8 @@ fun addClient(hasPaid: Boolean)
     val lastName = readNextLine("Enter the client's last name: ")
     val street = readNextLine("Enter the client's street: ")
     val county = readNextLine("Enter the client's county: ")
-    val email = readNextLine("Enter the client's email: ")
-    val phone = readNextInt("Enter the client's phone: ")
+    val email = readValidEmail("Enter the client's email: ")
+    val phone = readValidPhone("Enter the client's phone number: ")
     val allergy = readNextLine("Enter the client's allergies: ")
     val isAdded = clientAPI.addClient(Client(firstName = firstName, lastName = lastName, street = street, county = county, email = email, phone = phone, allergy = allergy, hasPaid = hasPaid))
     if (isAdded) {
@@ -202,9 +207,9 @@ fun addClient(hasPaid: Boolean)
     val client: Client? = askUserToChoosePaidClient()
     if (client != null) {
         if (client.addAppointment(Appointment(
-                time = readNextDouble("\t Appointment Time: "),
-                date = readNextLine("\t Appointment Date: "),
-                treatment = readNextLine("\t Appointment Services: "),
+                time = readValidTime("\t Appointment Time, in the form 23.00: "),
+                date = readValidDate("\t Appointment Date: "),
+                treatment = readValidTreatment("\t Appointment Services: "),
                 cost = readNextInt("\t Appointment Cost:"),
                 isConfirmed = isConfirmed,
                 rating = readNextInt("\t Appointment rating:")
@@ -212,35 +217,6 @@ fun addClient(hasPaid: Boolean)
             println("Add Successful!")
         else println("Add NOT Successful")
     }
-}
-
-fun updateAppointmentForClient(isConfirmed: Boolean)
-{
-  val client: Client? = askUserToChoosePaidClient()
-  if (client != null)
-  {
-      val appointment: Appointment? = askUserToChooseAppointment(client)
-      if (appointment != null)
-      {
-          val newTime = readNextDouble("Enter a new appointment time: ")
-          val newDate = readNextLine("Enter a new appointment date: ")
-          val newTreatment = readNextLine("Enter the services that the new appointment will provide: ")
-          val newCost = readNextInt("Enter a new appointment cost: ")
-          val isConfirmed = isConfirmed
-          val newRating = readNextInt("Enter a new rating: ")
-          if (client.updateAppointment(appointment.appointmentId, Appointment(time = newTime, date = newDate,
-                                      treatment = newTreatment, cost = newCost, isConfirmed = isConfirmed, rating = newRating)))
-
-                  else
-                  {
-                      println("Appointment Details not updated")
-                  }
-     }
-              else
-              {
-                  println("Invalid Appointment Id")
-              }
-  }
 }
 
 
@@ -340,13 +316,13 @@ fun updateClient(hasPaid: Boolean)
         // only ask the user to choose the note if notes exist
         val id = ScannerInput.readNextInt("Enter the id of the note to update: ")
         if (clientAPI.findClientById(id) != null) {
-            val firstName = ScannerInput.readNextLine("Enter the client's first name:  ")
-            val lastName = ScannerInput.readNextLine("Enter the client's last name:  ")
-            val street = ScannerInput.readNextLine("Enter the client's street:  ")
-            val county = ScannerInput.readNextLine("Enter the client's county:  ")
-            val email = ScannerInput.readNextLine("Enter the client's email:  ")
-            val phone = ScannerInput.readNextInt("Enter the client's phone number:  ")
-            val allergy = ScannerInput.readNextLine("Enter the client's allergies: ")
+            val firstName = readNextLine("Enter the client's first name:  ")
+            val lastName = readNextLine("Enter the client's last name:  ")
+            val street = readNextLine("Enter the client's street:  ")
+            val county = readNextLine("Enter the client's county:  ")
+            val email = readValidEmail("Enter the client's email:  ")
+            val phone = readValidPhone("Enter the client's phone number:  ")
+            val allergy = readNextLine("Enter the client's allergies: ")
 
             // pass the index of the note and the new note details to NoteAPI for updating and check for success.
             if (clientAPI.updateClient(id, Client(0, firstName, lastName, street, county, email, phone, allergy, hasPaid))){
@@ -361,9 +337,36 @@ fun updateClient(hasPaid: Boolean)
 }
 
 /**
- *
+ *function to update a client's appointment
  */
+fun updateAppointmentForClient(isConfirmed: Boolean)
+{
+    val client: Client? = askUserToChoosePaidClient()
+    if (client != null)
+    {
+        val appointment: Appointment? = askUserToChooseAppointment(client)
+        if (appointment != null)
+        {
+            val newTime = readNextDouble("Enter a new appointment time: ")
+            val newDate = readValidDate("Enter a new appointment date: ")
+            val newTreatment = readValidTreatment("Enter the services that the new appointment will provide: ")
+            val newCost = readNextInt("Enter a new appointment cost: ")
+            val isConfirmed = isConfirmed
+            val newRating = readNextInt("Enter a new rating: ")
+            if (client.updateAppointment(appointment.appointmentId, Appointment(time = newTime, date = newDate,
+                    treatment = newTreatment, cost = newCost, isConfirmed = isConfirmed, rating = newRating)))
 
+            else
+            {
+                println("Appointment Details not updated")
+            }
+        }
+        else
+        {
+            println("Invalid Appointment Id")
+        }
+    }
+}
 
 
 //Delete methods
