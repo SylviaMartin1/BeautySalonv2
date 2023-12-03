@@ -1,0 +1,73 @@
+<object-stream>
+  <list>
+    <models.Client>
+      <clientId>0</clientId>
+      <firstName>Joan</firstName>
+      <lastName>Jacob</lastName>
+      <street>Red Street</street>
+      <county>Waterford</county>
+      <email>Joan@gmail.com</email>
+      <phone>123456789</phone>
+      <allergy>None</allergy>
+      <hasPaid>true</hasPaid>
+      <appointments class="linked-hash-set">
+        <models.Appointment>
+          <appointmentId>0</appointmentId>
+          <time>10.0</time>
+          <date>15/12/2023</date>
+          <treatment>Manicure</treatment>
+          <cost>25</cost>
+          <rating>4</rating>
+          <isConfirmed>true</isConfirmed>
+        </models.Appointment>
+      </appointments>
+      <lastAppointmentId>0</lastAppointmentId>
+    </models.Client>
+    <models.Client>
+      <clientId>1</clientId>
+      <firstName>Toni</firstName>
+      <lastName>Terry</lastName>
+      <street>Orange Street</street>
+      <county>Cork</county>
+      <email>Toni@gmail.com</email>
+      <phone>112345678</phone>
+      <allergy>None</allergy>
+      <hasPaid>true</hasPaid>
+      <appointments class="linked-hash-set">
+        <models.Appointment>
+          <appointmentId>1</appointmentId>
+          <time>11.0</time>
+          <date>15/12/2023</date>
+          <treatment>Pedicure</treatment>
+          <cost>30</cost>
+          <rating>5</rating>
+          <isConfirmed>true</isConfirmed>
+        </models.Appointment>
+      </appointments>
+      <lastAppointmentId>0</lastAppointmentId>
+    </models.Client>
+    <models.Client>
+      <clientId>2</clientId>
+      <firstName>Maya</firstName>
+      <lastName>Matthew</lastName>
+      <street>Yellow Street</street>
+      <county>Dublin</county>
+      <email>Maya@gmail.com</email>
+      <phone>111234567</phone>
+      <allergy>Sulfates</allergy>
+      <hasPaid>true</hasPaid>
+      <appointments class="linked-hash-set">
+        <models.Appointment>
+          <appointmentId>2</appointmentId>
+          <time>13.0</time>
+          <date>15/12/2023</date>
+          <treatment>Facial</treatment>
+          <cost>35</cost>
+          <rating>3</rating>
+          <isConfirmed>false</isConfirmed>
+        </models.Appointment>
+      </appointments>
+      <lastAppointmentId>0</lastAppointmentId>
+    </models.Client>
+  </list>
+</object-stream>

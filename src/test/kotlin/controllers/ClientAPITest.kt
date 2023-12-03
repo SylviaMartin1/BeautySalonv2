@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Assertions.assertEquals
+import persistence.JSONSerializer
 import persistence.XMLSerializer
 import java.io.File
 
@@ -462,4 +463,102 @@ class ClientAPITest {
         assertTrue(searchResults.contains("None"))
         assertFalse(searchResults.contains("Sulfates"))
     }
+
+    //Nested Class for persistence tests
+    @Nested
+    inner class PersistenceTests {
+        /**
+         * 19.
+         * Verifies that if you save and load an empty collection in XML, the app doesn't crash
+         */
+        @Test
+        fun `saving and loading an empty collection in XML doesn't crash app`() {
+            // Saving an empty clients.XML file.
+            val storingClients = ClientAPI(XMLSerializer(File("clients.xml")))
+            storingClients.store()
+
+            //Loading the empty notes.xml file into a new object
+            val loadedClients = ClientAPI(XMLSerializer(File("clients.xml")))
+            loadedClients.load()
+
+            //Comparing the source of the notes (storingNotes) with the XML loaded notes (loadedNotes)
+            assertEquals(0, storingClients.numberOfClients())
+            assertEquals(0, loadedClients.numberOfClients())
+            assertEquals(storingClients.numberOfClients(), loadedClients.numberOfClients())
+        }
+
+
+        /**
+         * 20.
+         * Verifies that if you save and load a loaded collection in XML, the app doesn't lose data
+         */
+        @Test
+        fun `saving and loading an loaded collection in XML doesn't lose data`() {
+            // Storing 3 notes to the clients.XML file.
+            val storingClients = ClientAPI(XMLSerializer(File("clients.xml")))
+            storingClients.addClient(joan!!)
+            storingClients.addClient(toni!!)
+            storingClients.addClient(maya!!)
+            storingClients.store()
+
+            //Loading notes.xml into a different collection
+            val loadedClients = ClientAPI(XMLSerializer(File("clients.xml")))
+            loadedClients.load()
+
+            //Comparing the source of the notes (storingNotes) with the XML loaded notes (loadedNotes)
+            assertEquals(3, storingClients.numberOfClients())
+            assertEquals(3, loadedClients.numberOfClients())
+            assertEquals(storingClients.numberOfClients(), loadedClients.numberOfClients())
+            assertEquals(storingClients.findClient(0), loadedClients.findClient(0))
+            assertEquals(storingClients.findClient(1), loadedClients.findClient(1))
+            assertEquals(storingClients.findClient(2), loadedClients.findClient(2))
+        }
+
+        /**
+         * 21.
+         * Verifies that if you save and load an empty collection in JSON, the app doesn't crash
+         */
+        @Test
+        fun `saving and loading an empty collection in JSON doesn't crash app`() {
+            // Saving an empty notes.json file.
+            val storingClients = ClientAPI(JSONSerializer(File("clients.json")))
+            storingClients.store()
+
+            //Loading the empty notes.json file into a new object
+            val loadedClients = ClientAPI(JSONSerializer(File("clients.json")))
+            loadedClients.load()
+
+            //Comparing the source of the notes (storingNotes) with the json loaded notes (loadedNotes)
+            assertEquals(0, storingClients.numberOfClients())
+            assertEquals(0, loadedClients.numberOfClients())
+            assertEquals(storingClients.numberOfClients(), loadedClients.numberOfClients())
+        }
+
+        /**
+         * 22.
+         * Verifies that if you save and load a loaded collection in JSON, the app doesn't lose data
+         */
+        @Test
+        fun `saving and loading an loaded collection in JSON doesn't lose data`() {
+            // Storing 3 notes to the notes.json file.
+            val storingClients = ClientAPI(JSONSerializer(File("notes.json")))
+            storingClients.addClient(joan!!)
+            storingClients.addClient(toni!!)
+            storingClients.addClient(maya!!)
+            storingClients.store()
+
+            //Loading notes.json into a different collection
+            val loadedClients = ClientAPI(JSONSerializer(File("notes.json")))
+            loadedClients.load()
+
+            //Comparing the source of the notes (storingNotes) with the json loaded notes (loadedNotes)
+            assertEquals(3, storingClients.numberOfClients())
+            assertEquals(3, loadedClients.numberOfClients())
+            assertEquals(storingClients.numberOfClients(), loadedClients.numberOfClients())
+            assertEquals(storingClients.findClient(0), loadedClients.findClient(0))
+            assertEquals(storingClients.findClient(1), loadedClients.findClient(1))
+            assertEquals(storingClients.findClient(2), loadedClients.findClient(2))
+        }
+    }
+
 }

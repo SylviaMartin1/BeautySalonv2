@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f4d87e7-65f7-414c-b707-75521f7541c4" name="Changes" comment="Add functions to test clientApi functions">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/controllers/ClientAPI.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/controllers/ClientAPI.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/utils/ScannerInput.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/utils/ScannerInput.kt" afterDir="false" />
+    <list default="true" id="7f4d87e7-65f7-414c-b707-75521f7541c4" name="Changes" comment="Add junit testing for email utility">
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/controllers/ClientAPITest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/controllers/ClientAPITest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,17 +35,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Class" />
         <option value="Kotlin Interface" />
         <option value="Kotlin Object" />
         <option value="Kotlin File" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="JUnit-tests-clients" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -72,82 +66,16 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/sylvi/OneDrive - South East Technological University (Waterford Campus)/Semester Three/Software Development Tools/BeautySalonv2",
+    "git-widget-placeholder": "test-user-validation-files",
+    "last_opened_file_path": "C:/Users/sylvi/OneDrive - South East Technological University (Waterford Campus)/Semester Three/notes-app-SylviaMartin1",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settings.ide.settings.notifications"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.BeautySalonv2 [ktlintFormat]">
-    <configuration name="BeautySalonv2 [dokkaHtml]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="dokkaHtml" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="BeautySalonv2 [jacocoTestCoverageVerification]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="jacocoTestCoverageVerification" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="BeautySalonv2 [ktlintFormat]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="ktlintFormat" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="ClientAPITest.search clients by allergy returns clients when clients with that allergy exist" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.PersistenceTests">
+    <configuration name="DateUtilityTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -160,7 +88,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;controllers.ClientAPITest.search clients by allergy returns clients when clients with that allergy exist&quot;" />
+            <option value="&quot;utils.DateUtilityTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -171,7 +99,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ClientAPITest.search clients by phone returns clients when clients with that phone exist" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="EmailValidatorTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -184,7 +112,79 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;controllers.ClientAPITest.search clients by phone returns clients when clients with that phone exist&quot;" />
+            <option value="&quot;EmailValidatorTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="EmailValidatorTest.valid email address should return true" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;EmailValidatorTest.valid email address should return true&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="PersistenceTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;controllers.ClientAPITest$PersistenceTests&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="UtilitiesTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;utils.UtilitiesTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -197,11 +197,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.BeautySalonv2 [ktlintFormat]" />
-        <item itemvalue="Gradle.BeautySalonv2 [jacocoTestCoverageVerification]" />
-        <item itemvalue="Gradle.BeautySalonv2 [dokkaHtml]" />
-        <item itemvalue="Gradle.ClientAPITest.search clients by allergy returns clients when clients with that allergy exist" />
-        <item itemvalue="Gradle.ClientAPITest.search clients by phone returns clients when clients with that phone exist" />
+        <item itemvalue="Gradle.PersistenceTests" />
+        <item itemvalue="Gradle.EmailValidatorTest.valid email address should return true" />
+        <item itemvalue="Gradle.EmailValidatorTest" />
+        <item itemvalue="Gradle.UtilitiesTest" />
+        <item itemvalue="Gradle.DateUtilityTest" />
       </list>
     </recent_temporary>
   </component>
@@ -446,7 +446,31 @@
       <option name="project" value="LOCAL" />
       <updated>1701620511128</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Alter build.gradle">
+      <option name="closed" value="true" />
+      <created>1701627601659</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1701627601659</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Add junit testing for date utility">
+      <option name="closed" value="true" />
+      <created>1701629857726</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1701629857726</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Add junit testing for email utility">
+      <option name="closed" value="true" />
+      <created>1701631693989</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1701631693990</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -473,9 +497,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Testing if everything is working" />
-    <MESSAGE value="Create Client and Appointment data classes" />
-    <MESSAGE value="Create functions to manipulate appointment set" />
     <MESSAGE value="Create functions to manipulate client arrayList" />
     <MESSAGE value="Create client data model" />
     <MESSAGE value="Create appointment data model" />
@@ -498,7 +519,10 @@
     <MESSAGE value="Add validation to date" />
     <MESSAGE value="Add functions to initialise and clean up the environment before and after testing" />
     <MESSAGE value="Add functions to test clientApi functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add functions to test clientApi functions" />
+    <MESSAGE value="Alter build.gradle" />
+    <MESSAGE value="Add junit testing for date utility" />
+    <MESSAGE value="Add junit testing for email utility" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add junit testing for email utility" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
