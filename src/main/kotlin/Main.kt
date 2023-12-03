@@ -8,6 +8,7 @@ import utils.ScannerInput.readNextDouble
 import utils.ScannerInput.readNextInt
 import utils.ScannerInput.readNextLine
 import utils.ValidateInput.readValidPhone
+import utils.ValidateInput.readValidTreatment
 import java.io.File
 import kotlin.system.exitProcess
 
@@ -205,7 +206,7 @@ fun addClient(hasPaid: Boolean)
         if (client.addAppointment(Appointment(
                 time = readNextDouble("\t Appointment Time: "),
                 date = readNextLine("\t Appointment Date: "),
-                treatment = readNextLine("\t Appointment Services: "),
+                treatment = readValidTreatment("\t Appointment Services: "),
                 cost = readNextInt("\t Appointment Cost:"),
                 isConfirmed = isConfirmed,
                 rating = readNextInt("\t Appointment rating:")
@@ -345,7 +346,7 @@ fun updateAppointmentForClient(isConfirmed: Boolean)
         {
             val newTime = readNextDouble("Enter a new appointment time: ")
             val newDate = readNextLine("Enter a new appointment date: ")
-            val newTreatment = readNextLine("Enter the services that the new appointment will provide: ")
+            val newTreatment = readValidTreatment("Enter the services that the new appointment will provide: ")
             val newCost = readNextInt("Enter a new appointment cost: ")
             val isConfirmed = isConfirmed
             val newRating = readNextInt("Enter a new rating: ")
