@@ -20,6 +20,23 @@ object ValidateInput
         } while (true)
     }
 
+
+    /**
+     * Repeatedly prompts the user for a valid phone input and returns the valid phone
+     */
+    @JvmStatic
+    fun readValidRating(prompt: String?): Int {
+        var input = ScannerInput.readNextInt(prompt)
+        do {
+            if (Utilities.validRange(input, 1 ,5))
+                return input
+            else {
+                print("Invalid rating $input. Enter a rating from 1 to 5")
+                input = ScannerInput.readNextInt(prompt)
+            }
+        } while (true)
+    }
+
     /**
      * Repeatedly prompts the user for a valid time input and returns the valid time
      */

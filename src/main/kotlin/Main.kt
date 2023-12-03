@@ -11,6 +11,7 @@ import utils.ScannerInput.readNextLine
 import utils.ValidateInput.readValidDate
 import utils.ValidateInput.readValidEmail
 import utils.ValidateInput.readValidPhone
+import utils.ValidateInput.readValidRating
 import utils.ValidateInput.readValidTime
 import utils.ValidateInput.readValidTreatment
 import java.io.File
@@ -111,10 +112,12 @@ fun mainMenu() = readNextInt(
          > | 22) Search for an appointment by its treatments $search 🔎
          > | 23) Search for an appointment by its cost $search 🔎
          > | 24) Search for an appointment by its rating $search  🔎                                             
-         > ----------------------------------------------------- $reset
-         > $red| 0) Exit    $exit 🚪                                    
-         > ----------------------------------------------------- $reset
-         > ==>> """.trimMargin(">")
+         > ----------------------------------------------------- 
+         > | 25) Load clients
+         > | 26) Save clients 
+         > | 0) Exit     🚪$exit                                   
+         > ----------------------------------------------------- 
+         > ==>> $reset """.trimMargin(">")
 )
 
 /**
@@ -168,6 +171,8 @@ fun runMenu()
             22 -> searchAppointmentsByTreatment()
             23 -> searchAppointmentsByCost()
             24 -> searchAppointmentsByRating()
+            25 -> load()
+            26 -> save()
             0 -> exitApp()
             else -> println("Invalid menu choice: $option")
         }
@@ -211,7 +216,7 @@ fun addClient(hasPaid: Boolean)
                 treatment = readValidTreatment("\t Appointment Services: "),
                 cost = readNextInt("\t Appointment Cost:"),
                 isConfirmed = isConfirmed,
-                rating = readNextInt("\t Appointment rating:")
+                rating = readValidRating("\t Appointment rating:")
             )))
             println("Add Successful!")
         else println("Add NOT Successful")
@@ -351,7 +356,7 @@ fun updateAppointmentForClient(isConfirmed: Boolean)
             val newTreatment = readValidTreatment("Enter the services that the new appointment will provide: ")
             val newCost = readNextInt("Enter a new appointment cost: ")
             val isItConfirmed = isConfirmed
-            val newRating = readNextInt("Enter a new rating: ")
+            val newRating = readValidRating("Enter a new rating: ")
             if (client.updateAppointment(appointment.appointmentId, Appointment(time = newTime, date = newDate,
                     treatment = newTreatment, cost = newCost, isConfirmed = isItConfirmed, rating = newRating)))
 
