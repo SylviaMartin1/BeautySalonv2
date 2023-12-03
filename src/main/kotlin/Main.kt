@@ -7,7 +7,9 @@ import utils.ScannerInput
 import utils.ScannerInput.readNextDouble
 import utils.ScannerInput.readNextInt
 import utils.ScannerInput.readNextLine
+import utils.ValidateInput.readValidEmail
 import utils.ValidateInput.readValidPhone
+import utils.ValidateInput.readValidTime
 import utils.ValidateInput.readValidTreatment
 import java.io.File
 import kotlin.system.exitProcess
@@ -184,7 +186,7 @@ fun addClient(hasPaid: Boolean)
     val lastName = readNextLine("Enter the client's last name: ")
     val street = readNextLine("Enter the client's street: ")
     val county = readNextLine("Enter the client's county: ")
-    val email = readNextLine("Enter the client's email: ")
+    val email = readValidEmail("Enter the client's email: ")
     val phone = readValidPhone("Enter the client's phone number: ")
     val allergy = readNextLine("Enter the client's allergies: ")
     val isAdded = clientAPI.addClient(Client(firstName = firstName, lastName = lastName, street = street, county = county, email = email, phone = phone, allergy = allergy, hasPaid = hasPaid))
@@ -204,7 +206,7 @@ fun addClient(hasPaid: Boolean)
     val client: Client? = askUserToChoosePaidClient()
     if (client != null) {
         if (client.addAppointment(Appointment(
-                time = readNextDouble("\t Appointment Time: "),
+                time = readValidTime("\t Appointment Time, in the form 23.00: "),
                 date = readNextLine("\t Appointment Date: "),
                 treatment = readValidTreatment("\t Appointment Services: "),
                 cost = readNextInt("\t Appointment Cost:"),
@@ -313,13 +315,13 @@ fun updateClient(hasPaid: Boolean)
         // only ask the user to choose the note if notes exist
         val id = ScannerInput.readNextInt("Enter the id of the note to update: ")
         if (clientAPI.findClientById(id) != null) {
-            val firstName = ScannerInput.readNextLine("Enter the client's first name:  ")
-            val lastName = ScannerInput.readNextLine("Enter the client's last name:  ")
-            val street = ScannerInput.readNextLine("Enter the client's street:  ")
-            val county = ScannerInput.readNextLine("Enter the client's county:  ")
-            val email = ScannerInput.readNextLine("Enter the client's email:  ")
+            val firstName = readNextLine("Enter the client's first name:  ")
+            val lastName = readNextLine("Enter the client's last name:  ")
+            val street = readNextLine("Enter the client's street:  ")
+            val county = readNextLine("Enter the client's county:  ")
+            val email = readValidEmail("Enter the client's email:  ")
             val phone = readValidPhone("Enter the client's phone number:  ")
-            val allergy = ScannerInput.readNextLine("Enter the client's allergies: ")
+            val allergy = readNextLine("Enter the client's allergies: ")
 
             // pass the index of the note and the new note details to NoteAPI for updating and check for success.
             if (clientAPI.updateClient(id, Client(0, firstName, lastName, street, county, email, phone, allergy, hasPaid))){

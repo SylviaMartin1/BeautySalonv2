@@ -41,4 +41,9 @@ object Utilities
         return numberToCheck in min..max
     }
 
+    fun validRangeDouble(numberToCheck: Double, min: Double, max: Double): Boolean
+    {
+        return numberToCheck in min..max
+    }
+
 }
