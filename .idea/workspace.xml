@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f4d87e7-65f7-414c-b707-75521f7541c4" name="Changes" comment="Add junit testing for date utility">
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/utils/EmailUtilityTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/utils/TreatmentUtilityTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/utils/Utilities.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/utils/ValidateInput.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/utils/ValidateInput.kt" afterDir="false" />
+    <list default="true" id="7f4d87e7-65f7-414c-b707-75521f7541c4" name="Changes" comment="Add junit testing for email utility">
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/controllers/ClientAPITest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/controllers/ClientAPITest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,31 +74,7 @@
     "settings.editor.selected.configurable": "reference.settings.ide.settings.notifications"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.EmailValidatorTest.valid email address should return true">
-    <configuration name="CategoryUtilityTest.categoriesReturnsFullCategoriesSet" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;utils.CategoryUtilityTest.categoriesReturnsFullCategoriesSet&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.PersistenceTests">
     <configuration name="DateUtilityTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -176,6 +147,30 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="PersistenceTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;controllers.ClientAPITest$PersistenceTests&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="UtilitiesTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -202,11 +197,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.PersistenceTests" />
         <item itemvalue="Gradle.EmailValidatorTest.valid email address should return true" />
         <item itemvalue="Gradle.EmailValidatorTest" />
         <item itemvalue="Gradle.UtilitiesTest" />
         <item itemvalue="Gradle.DateUtilityTest" />
-        <item itemvalue="Gradle.CategoryUtilityTest.categoriesReturnsFullCategoriesSet" />
       </list>
     </recent_temporary>
   </component>
@@ -467,7 +462,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701629857726</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Add junit testing for email utility">
+      <option name="closed" value="true" />
+      <created>1701631693989</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1701631693990</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -494,7 +497,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Create functions to manipulate appointment set" />
     <MESSAGE value="Create functions to manipulate client arrayList" />
     <MESSAGE value="Create client data model" />
     <MESSAGE value="Create appointment data model" />
@@ -519,22 +521,8 @@
     <MESSAGE value="Add functions to test clientApi functions" />
     <MESSAGE value="Alter build.gradle" />
     <MESSAGE value="Add junit testing for date utility" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add junit testing for date utility" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-function">
-          <url>file://$PROJECT_DIR$/src/test/kotlin/utils/EmailUtilityTest.kt</url>
-          <line>8</line>
-          <properties class="EmailValidatorTest" method="valid email address should return true">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Add junit testing for email utility" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add junit testing for email utility" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
