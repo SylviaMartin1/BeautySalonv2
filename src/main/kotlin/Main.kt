@@ -7,6 +7,7 @@ import utils.ScannerInput
 import utils.ScannerInput.readNextDouble
 import utils.ScannerInput.readNextInt
 import utils.ScannerInput.readNextLine
+import utils.ValidateInput.readValidDate
 import utils.ValidateInput.readValidEmail
 import utils.ValidateInput.readValidPhone
 import utils.ValidateInput.readValidTime
@@ -207,7 +208,7 @@ fun addClient(hasPaid: Boolean)
     if (client != null) {
         if (client.addAppointment(Appointment(
                 time = readValidTime("\t Appointment Time, in the form 23.00: "),
-                date = readNextLine("\t Appointment Date: "),
+                date = readValidDate("\t Appointment Date: "),
                 treatment = readValidTreatment("\t Appointment Services: "),
                 cost = readNextInt("\t Appointment Cost:"),
                 isConfirmed = isConfirmed,
@@ -347,7 +348,7 @@ fun updateAppointmentForClient(isConfirmed: Boolean)
         if (appointment != null)
         {
             val newTime = readNextDouble("Enter a new appointment time: ")
-            val newDate = readNextLine("Enter a new appointment date: ")
+            val newDate = readValidDate("Enter a new appointment date: ")
             val newTreatment = readValidTreatment("Enter the services that the new appointment will provide: ")
             val newCost = readNextInt("Enter a new appointment cost: ")
             val isConfirmed = isConfirmed

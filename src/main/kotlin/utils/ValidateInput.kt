@@ -74,6 +74,28 @@ object ValidateInput
             }
         } while (true)
     }
+
+    /**
+     * Repeatedly prompts the user for a valid date input and returns the valid date when provided
+     */
+    @JvmStatic
+    fun readValidDate(prompt: String?): String
+    {
+        print(prompt)
+        var input = Scanner(System.`in`).nextLine()
+        do {
+            if (DateUtility.isDateValid(input))
+                return input
+            else {
+                print("Invalid date $input.  Please try again: ")
+                input = Scanner(System.`in`).nextLine()
+            }
+        } while (true)
+    }
+
+
 }
+
+
 
 
