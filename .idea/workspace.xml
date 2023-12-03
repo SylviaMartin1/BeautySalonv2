@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f4d87e7-65f7-414c-b707-75521f7541c4" name="Changes" comment="Add functions to test clientApi functions">
+    <list default="true" id="7f4d87e7-65f7-414c-b707-75521f7541c4" name="Changes" comment="Alter build.gradle">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/controllers/ClientAPI.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/controllers/ClientAPI.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/utils/ScannerInput.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/utils/ScannerInput.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/controllers/ClientAPITest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/controllers/ClientAPITest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +45,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="JUnit-tests-clients" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -72,8 +66,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/sylvi/OneDrive - South East Technological University (Waterford Campus)/Semester Three/Software Development Tools/BeautySalonv2",
+    "git-widget-placeholder": "test-user-validation-files",
+    "last_opened_file_path": "C:/Users/sylvi/OneDrive - South East Technological University (Waterford Campus)/Semester Three/notes-app-SylviaMartin1",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -446,7 +440,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701620511128</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Alter build.gradle">
+      <option name="closed" value="true" />
+      <created>1701627601659</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1701627601659</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -473,7 +475,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Testing if everything is working" />
     <MESSAGE value="Create Client and Appointment data classes" />
     <MESSAGE value="Create functions to manipulate appointment set" />
     <MESSAGE value="Create functions to manipulate client arrayList" />
@@ -498,7 +499,8 @@
     <MESSAGE value="Add validation to date" />
     <MESSAGE value="Add functions to initialise and clean up the environment before and after testing" />
     <MESSAGE value="Add functions to test clientApi functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add functions to test clientApi functions" />
+    <MESSAGE value="Alter build.gradle" />
+    <option name="LAST_COMMIT_MESSAGE" value="Alter build.gradle" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
