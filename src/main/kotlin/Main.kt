@@ -3,6 +3,7 @@ import controllers.ClientAPI
 import models.Appointment
 import models.Client
 import persistence.JSONSerializer
+import persistence.XMLSerializer
 import utils.ScannerInput
 import utils.ScannerInput.readNextDouble
 import utils.ScannerInput.readNextInt
@@ -20,8 +21,8 @@ import kotlin.system.exitProcess
 /**
  * holds clientAPI class as an object
  */
-//private val noteAPI = NoteAPI(XMLSerializer(File("notes.xml")))
-private val clientAPI = ClientAPI(JSONSerializer(File("notes.json")))
+private val clientAPI = ClientAPI(XMLSerializer(File("notes.xml")))
+//private val clientAPI = ClientAPI(JSONSerializer(File("notes.json")))
 
 
 //3. Methods

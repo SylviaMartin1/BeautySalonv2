@@ -122,6 +122,8 @@ class ClientAPI (serializerType: Serializer)
     }
 
 
+
+
     //Update functions
     fun updateClient(id: Int, client: Client?): Boolean {
         // find the note object by the index number
@@ -156,8 +158,6 @@ class ClientAPI (serializerType: Serializer)
      * function to clear all clients from the arrayList
      */
     fun clearAllClients() = clients.clear()
-
-
 
 
 //Search functions
@@ -408,7 +408,21 @@ class ClientAPI (serializerType: Serializer)
      * function to get client's id
      */
     private var lastClientId = 0
-    private fun getClientId() = lastClientId++
+     fun getClientId() = lastClientId++
 
+
+    /**
+     * helper function to find client using specific index number
+     */
+    fun findClient(index: Int): Client?
+    {
+        return if (Utilities.isValidListIndex(index, clients))
+        {
+            clients[index]
+        }
+        else null
+    }
 
 }
+
+

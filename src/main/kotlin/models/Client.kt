@@ -19,15 +19,13 @@ data class Client(var clientId: Int = 0,
                   var phone: Int,
                   var allergy: String,
                   var hasPaid: Boolean,
-                  var appointments : MutableSet<Appointment> = mutableSetOf())
-{
+                  var appointments : MutableSet<Appointment> = mutableSetOf()) {
     //Create functions
     /**
      * addAppointment()
      * function to add an appointment to the mutable set
      */
-    fun addAppointment(appointment: Appointment) : Boolean
-    {
+    fun addAppointment(appointment: Appointment): Boolean {
         appointment.appointmentId = getAppointmentId()
         return appointments.add(appointment)
     }
@@ -45,8 +43,8 @@ data class Client(var clientId: Int = 0,
      * function to list all of the appointments in the mutable set
      */
     fun listAppointments() =
-        if (appointments.isEmpty())  "\tNO APPOINTMENTS ADDED"
-        else  Utilities.formatSetString(appointments)
+        if (appointments.isEmpty()) "\tNO APPOINTMENTS ADDED"
+        else Utilities.formatSetString(appointments)
 
 
     //Update functions
@@ -54,13 +52,12 @@ data class Client(var clientId: Int = 0,
      * updateAppointment()
      * function to update an appointment
      */
-    fun updateAppointment(id: Int, newAppointment: Appointment): Boolean
-    {
+    fun updateAppointment(id: Int, newAppointment: Appointment): Boolean {
         val foundAppointment = findAppointmentById(id)
 
         //if the object exists, use the details passed in the newAppointment parameter to
         //update the found object in the Set
-        if (foundAppointment != null){
+        if (foundAppointment != null) {
             foundAppointment.time = newAppointment.time
             foundAppointment.date = newAppointment.date
             foundAppointment.treatment = newAppointment.treatment
@@ -78,9 +75,8 @@ data class Client(var clientId: Int = 0,
      * deleteAppointment()
      * function to delete an appointment
      */
-    fun deleteAppointment(id: Int): Boolean
-    {
-        return appointments.removeIf { appointment -> appointment.appointmentId == id}
+    fun deleteAppointment(id: Int): Boolean {
+        return appointments.removeIf { appointment -> appointment.appointmentId == id }
     }
 
 
@@ -89,9 +85,8 @@ data class Client(var clientId: Int = 0,
      * findAppointmentById()
      * function to find an appointment by their id
      */
-    fun findAppointmentById(id: Int): Appointment?
-    {
-        return appointments.find{ appointment -> appointment.appointmentId == id }
+    fun findAppointmentById(id: Int): Appointment? {
+        return appointments.find { appointment -> appointment.appointmentId == id }
     }
 
 
@@ -99,14 +94,10 @@ data class Client(var clientId: Int = 0,
     /**
      * Function to check an appointment's confirmation status
      */
-    fun checkAppointmentConfirmationStatus(): Boolean
-    {
-        if (appointments.isNotEmpty())
-        {
-            for (appointment in appointments)
-            {
-                if (!appointment.isConfirmed)
-                {
+    fun checkAppointmentConfirmationStatus(): Boolean {
+        if (appointments.isNotEmpty()) {
+            for (appointment in appointments) {
+                if (!appointment.isConfirmed) {
 
                     return false
                 }
@@ -135,3 +126,6 @@ data class Client(var clientId: Int = 0,
     }
 
 }
+
+
+
