@@ -29,46 +29,84 @@ fun main() = runMenu()
  * mainMenu()
  * Displays menu
  * Allows user input
+ * ANSI Escape Sequences
+ * Underline - Note Keeper App, Client Menu, Search Menu For Clients, Appointments Menu, Search Menu for Appointments
+ * Under
  */
+
+//Variables to improve UI of Menu
+/**
+ * ANSI Escape Sequences
+ * reset
+ * underline
+ * bold
+ * light blue
+ * pink
+ * purple
+ */
+
+val reset = "\u001B[0m"  //reset
+val underline = "\u001B[4m" //underline
+val bold = "\u001B[1m" //bold
+val lightBlue = "\u001B[34m" //light blue
+val pink = "\u001B[38;5;206m" //pink
+val purple = "\u001B[38;5;164m" //purple
+val red = "\u001B[31m"
+
+ /** Unicode Escape Sequences
+ * Some emojis created using emojipedia.com
+ */
+val plus = "\u2795" //plus emoji
+val questionMark = "\u2753" //question mark emoji
+val clipboard = "\uD83D\uDCCB" //clipboard emoji
+val numbers = "\uD83D\uDD22" //1234 emoji
+val pencil = "\u270F" //pencil emoji
+val minus = "\u2796"//minus emoji
+val broom = "\uD83E\uDDF9" //broom emoji
+val search = "\uD83D\uDD0D" //magnifying glass emoji
+val fl = "\uD83D\uDCAE" //floppy disk emoji
+val clo = "\uD83D\uDD03" //clockwise emoji
+val exit = "\uD83D\uDEAA" //door emoji
+
 fun mainMenu() = ScannerInput.readNextInt(
     """ 
-         > -----------------------------------------------------  
-         > |                  NOTE KEEPER APP                  |
-         > -----------------------------------------------------  
-         > | CLIENT MENU             
-         > | 1) Add a client  
-         > | 2) List clients
-         > | 3) Update a client
-         > | 4) Delete a client
-         > | 5) Clear all clients from the system
-         > | 6) Check if there are clients in the system                                                      
+     >$bold $purple ----------------------------------------------------- $reset 
+       > $bold $purple            $underline 💅 NOTE KEEPER APP 💅$reset                  
+        > $bold $purple-----------------------------------------------------  $reset
+       >$lightBlue |$underline $bold  CLIENT MENU $reset            
+        > $lightBlue| 1) Add a client $plus ➕
+         > | 2) List clients $clipboard
+         > | 3) Update a client $pencil ✏️
+         > | 4) Delete a client $minus ➖
+         > | 5) Clear all clients from the system $broom 🧹
+         > | 6) Check if there are clients in the system $questionMark ❓                                                 
          > ----------------------------------------------------- 
-         > | REPORT MENU FOR CLIENTS       
-         > | 7) Search for a client by their Id
-         > | 8) Search for a client by their first name
-         > | 9) Search for a client by their last name
-         > | 10) Search for a client by their street
-         > | 11) Search for a client by their county
-         > | 12) Search for a client by their email
-         > | 13) Search for a client by their phone number
-         > | 14) Search for a client by their allergy                                                     
+         > | $underline $bold $lightBlue SEARCH MENU FOR CLIENTS $reset     
+      > $lightBlue| 7) Search for a client by their Id
+         > | 8)  Search for a client by their first name $search 🔎
+         > | 9)  Search for a client by their last name $search 🔎
+         > | 10) Search for a client by their street $search 🔎
+         > | 11) Search for a client by their county $search 🔎
+         > | 12) Search for a client by their email $search 🔎
+         > | 13) Search for a client by their phone number $search 🔎
+         > | 14) Search for a client by their allergy $reset 🔎                                                 
          > -----------------------------------------------------
-         > | APPOINTMENT MENU                                            
-         > | 15) Add an appointment
-         > | 16) List confirmed appointments      
-         > | 17) Update an appointment
-         > | 18) Delete an appointment
+         > $pink|$underline $bold APPOINTMENT MENU $reset                                         
+         > $pink| 15) Add an appointment $plus ➕
+         > | 16) List confirmed appointments $clipboard     
+         > | 17) Update an appointment $pencil ✏️
+         > | 18) Delete an appointment $minus ➖
          > -----------------------------------------------------  
-         > | REPORT MENU FOR APPOINTMENTS     
-         > | 19) Search for an appointment by its Id
-         > | 20) Search for an appointment by its time
-         > | 21) Search for an appointment by its date
-         > | 22) Search for an appointment by its treatments
-         > | 23) Search for an appointment by its cost
-         > | 24) Search for an appointment by its rating                                              
-         > -----------------------------------------------------
-         > | 0) Exit                                         
-         > -----------------------------------------------------  
+         > $pink|  $underline $bold SEARCH MENU FOR APPOINTMENTS $reset  
+         > $pink| 19) Search for an appointment by its Id $search 🔎
+         > | 20) Search for an appointment by its time $search 🔎
+         > | 21) Search for an appointment by its date $search 🔎
+         > | 22) Search for an appointment by its treatments $search 🔎
+         > | 23) Search for an appointment by its cost $search 🔎
+         > | 24) Search for an appointment by its rating $search  🔎                                             
+         > ----------------------------------------------------- $reset
+         > $red| 0) Exit    $exit 🚪                                    
+         > ----------------------------------------------------- $reset
          > ==>> """.trimMargin(">")
 )
 
@@ -211,12 +249,12 @@ fun listClients()
         val option = ScannerInput.readNextInt(
             """
                   > --------------------------------
-                  > |   1) View ALL Clients       
-                  > |   2) View ALL CONFIRMED Clients      
-                  > |   3) View ALL UNCONFIRMED Clients    
-                  > |   4) List the NUMBER OF ALL Clients
-                  > |   5) List the NUMBER OF ALL CONFIRMED Clients
-                  > |   6) List the NUMBER OF ALL UNCONFIRMED Clients
+                  > | $lightBlue 1) View ALL Clients $clipboard 📋 $reset       
+                  > |  ${lightBlue}2) View ALL PAID Clients $clipboard 📋
+                  > |  3) View ALL UNPAID Clients $clipboard 📋
+                  > |  4) List the NUMBER OF ALL Clients $numbers 🔢
+                  > |  5) List the NUMBER OF ALL PAID Clients $numbers 🔢
+                  > |  6) List the NUMBER OF ALL UNPAID Clients $numbers 🔢 $reset
                   > --------------------------------
          > ==>> """.trimMargin(">")
         )
