@@ -2,9 +2,9 @@
 import controllers.ClientAPI
 import models.Appointment
 import models.Client
-import persistence.JSONSerializer
+//import persistence.JSONSerializer
 import persistence.XMLSerializer
-import utils.ScannerInput
+//import utils.ScannerInput
 import utils.ScannerInput.readNextDouble
 import utils.ScannerInput.readNextInt
 import utils.ScannerInput.readNextLine
@@ -73,11 +73,9 @@ val pencil = "\u270F" //pencil emoji
 val minus = "\u2796"//minus emoji
 val broom = "\uD83E\uDDF9" //broom emoji
 val search = "\uD83D\uDD0D" //magnifying glass emoji
-val fl = "\uD83D\uDCAE" //floppy disk emoji
-val clo = "\uD83D\uDD03" //clockwise emoji
 val exit = "\uD83D\uDEAA" //door emoji
 
-fun mainMenu() = ScannerInput.readNextInt(
+fun mainMenu() = readNextInt(
     """ 
      >$bold $purple ----------------------------------------------------- $reset 
        > $bold $purple            $underline 💅 NOTE KEEPER APP 💅$reset                  
@@ -226,7 +224,7 @@ fun listClients()
 {
     if (clientAPI.numberOfClients() > 0)
     {
-        val option = ScannerInput.readNextInt(
+        val option = readNextInt(
             """
                   > --------------------------------
                   > | $lightBlue 1) View ALL Clients $clipboard 📋 $reset       
@@ -315,7 +313,7 @@ fun updateClient(hasPaid: Boolean)
     listClients()
     if (clientAPI.numberOfClients() > 0) {
         // only ask the user to choose the note if notes exist
-        val id = ScannerInput.readNextInt("Enter the id of the note to update: ")
+        val id = readNextInt("Enter the id of the note to update: ")
         if (clientAPI.findClientById(id) != null) {
             val firstName = readNextLine("Enter the client's first name:  ")
             val lastName = readNextLine("Enter the client's last name:  ")
@@ -352,10 +350,10 @@ fun updateAppointmentForClient(isConfirmed: Boolean)
             val newDate = readValidDate("Enter a new appointment date: ")
             val newTreatment = readValidTreatment("Enter the services that the new appointment will provide: ")
             val newCost = readNextInt("Enter a new appointment cost: ")
-            val isConfirmed = isConfirmed
+            val isItConfirmed = isConfirmed
             val newRating = readNextInt("Enter a new rating: ")
             if (client.updateAppointment(appointment.appointmentId, Appointment(time = newTime, date = newDate,
-                    treatment = newTreatment, cost = newCost, isConfirmed = isConfirmed, rating = newRating)))
+                    treatment = newTreatment, cost = newCost, isConfirmed = isItConfirmed, rating = newRating)))
 
             else
             {
@@ -380,7 +378,7 @@ fun deleteClient()
     listClients()
     if (clientAPI.numberOfClients() > 0) {
         // only ask the user to choose the client to delete if clients exist
-        val id = ScannerInput.readNextInt("Enter the id of the client to delete: ")
+        val id = readNextInt("Enter the id of the client to delete: ")
         // pass the index of the note to NoteAPI for deleting and check for success.
         val clientToDelete = clientAPI.deleteClient(id)
         if (clientToDelete) {
@@ -674,7 +672,7 @@ fun readBooleanFromUserInputOfClientPaymentStatus(): Boolean
 {
     while (true)
     {
-        val input = ScannerInput.readNextLine("Enter true or false to indicate whether the client has paid or not: ")
+        val input = readNextLine("Enter true or false to indicate whether the client has paid or not: ")
         if (input.equals("true", ignoreCase = true)) {
             return true
         } else if (input.equals("false", ignoreCase = true)) {
@@ -695,7 +693,7 @@ fun readBooleanFromUserInputOfAppointmentConfirmationStatus(): Boolean
 {
     while (true)
     {
-        val input = ScannerInput.readNextLine("Enter true or false to indicate whether the appointment is confirmed or not: ")
+        val input = readNextLine("Enter true or false to indicate whether the appointment is confirmed or not: ")
         if (input.equals("true", ignoreCase = true)) {
             return true
         } else if (input.equals("false", ignoreCase = true)) {

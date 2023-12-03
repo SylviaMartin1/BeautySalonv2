@@ -1,6 +1,6 @@
 package utils
 
-import java.util.*
+import java.util.Scanner
 
 /**
  * This class provides methods for the robust handling of I/O using Scanner.

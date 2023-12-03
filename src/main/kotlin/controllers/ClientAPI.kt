@@ -1,26 +1,20 @@
-//1. Packages
+// 1. Packages
 /**
  * Groups related classes which process user input
  */
 package controllers
 
-
-
-//2. Import Statements
+// 2. Import Statements
 /**
  * Imports 'Client' so that it can be used in this file
  */
-import models.Appointment
 import models.Client
-import utils.ScannerInput
+import persistence.Serializer
 import utils.Utilities
 import java.util.ArrayList
-import persistence.Serializer
 
-
-class ClientAPI (serializerType: Serializer)
-{
-//3. Variables
+class ClientAPI(serializerType: Serializer) {
+// 3. Variables
     /**
      * ArrayList to hold collection of clients
      */
@@ -31,10 +25,8 @@ class ClientAPI (serializerType: Serializer)
      */
     private var serializer: Serializer = serializerType
 
-
-
-//4. Functions
-//Create functions
+// 4. Functions
+// Create functions
     /**
      * addClient()
      * function to add a client to the arraylist
@@ -44,31 +36,38 @@ class ClientAPI (serializerType: Serializer)
         return clients.add(client)
     }
 
-
-//Read functions
+// Read functions
     /**
      * listAllClients()
      * function to list all clients
      */
     fun listAllClients() =
-        if (clients.isEmpty()) "No clients stored"
-        else Utilities.formatListString(clients)
+        if (clients.isEmpty()) {
+            "No clients stored"
+        } else {
+            Utilities.formatListString(clients)
+        }
 
     /**
      * listPaidClients()
      * function to list all confirmed clients
      */
     fun listPaidClients() =
-        if (numberOfUnPaidClients() == 0) "No paid clients stored"
-        else Utilities.formatListString(clients.filter { client -> client.hasPaid })
-
+        if (numberOfUnPaidClients() == 0) {
+            "No paid clients stored"
+        } else {
+            Utilities.formatListString(clients.filter { client -> client.hasPaid })
+        }
 
     /**
      * listUnpaidClients
      */
     fun listUnpaidClients() =
-        if (numberOfUnPaidClients() == 0) "No unpaid clients stored"
-        else Utilities.formatListString(clients.filter { client -> !client.hasPaid })
+        if (numberOfUnPaidClients() == 0) {
+            "No unpaid clients stored"
+        } else {
+            Utilities.formatListString(clients.filter { client -> !client.hasPaid })
+        }
 
     /**
      * numberOfClients()
@@ -87,14 +86,14 @@ class ClientAPI (serializerType: Serializer)
      */
     fun numberOfUnPaidClients(): Int = clients.count { client: Client -> !client.hasPaid }
 
-
     /**
      * listConfirmedAppointments()
      * list the appointments that are confirmed
      */
     fun listConfirmedAppointments(): String =
-        if (numberOfClients() == 0) "No clients stored"
-        else {
+        if (numberOfClients() == 0) {
+            "No clients stored"
+        } else {
             var listOfConfirmedAppointments = ""
             for (client in clients) {
                 for (appointment in client.appointments) {
@@ -121,10 +120,7 @@ class ClientAPI (serializerType: Serializer)
         return numberOfConfirmedAppointments
     }
 
-
-
-
-    //Update functions
+    // Update functions
     fun updateClient(id: Int, client: Client?): Boolean {
         // find the note object by the index number
         val foundClient = findClientById(id)
@@ -144,14 +140,12 @@ class ClientAPI (serializerType: Serializer)
         return false
     }
 
-
-//Delete functions
+// Delete functions
     /**
      * deleteClient()
      * function to delete a client from the arraylist
      */
     fun deleteClient(id: Int) = clients.removeIf { client -> client.clientId == id }
-
 
     /**
      * clearAllNotes()
@@ -159,8 +153,7 @@ class ClientAPI (serializerType: Serializer)
      */
     fun clearAllClients() = clients.clear()
 
-
-//Search functions
+// Search functions
     /**
      * findClientById()
      * function to find a client by their id
@@ -212,7 +205,6 @@ class ClientAPI (serializerType: Serializer)
             clients.filter { client -> client.email.contains(searchString, ignoreCase = true) }
         )
 
-
     /**
      * searchClientByPhone()
      * function to search for client by their email
@@ -231,15 +223,14 @@ class ClientAPI (serializerType: Serializer)
             clients.filter { client -> client.allergy.contains(searchString, ignoreCase = true) }
         )
 
-
-
     /**
      *searchAppointmentByTreatments()
      * function to search for an appointment by its treatments
      */
     fun searchAppointmentByTreatments(searchString: String): String {
-        return if (numberOfClients() == 0) "No clients stored"
-        else {
+        return if (numberOfClients() == 0) {
+            "No clients stored"
+        } else {
             var listOfClients = ""
             for (client in clients) {
                 for (appointment in client.appointments) {
@@ -248,8 +239,11 @@ class ClientAPI (serializerType: Serializer)
                     }
                 }
             }
-            if (listOfClients == "") "No items found for: $searchString"
-            else listOfClients
+            if (listOfClients == "") {
+                "No items found for: $searchString"
+            } else {
+                listOfClients
+            }
         }
     }
 
@@ -257,20 +251,23 @@ class ClientAPI (serializerType: Serializer)
      * searchAppointmentsById()
      * function to search for an appointment by their Id
      */
-    fun searchAppointmentById(searchInt: Int): String
-    {
-        return if (numberOfClients() == 0) "No clients stored"
-        else {
+    fun searchAppointmentById(searchInt: Int): String {
+        return if (numberOfClients() == 0) {
+            "No clients stored"
+        } else {
             var listOfClients = ""
             for (client in clients) {
                 for (appointment in client.appointments) {
-                    if (appointment.appointmentId == searchInt){
+                    if (appointment.appointmentId == searchInt) {
                         listOfClients += "${client.clientId}: ${client.firstName} ${client.lastName} \n\t${appointment}\n"
                     }
                 }
             }
-            if (listOfClients== "") "No items found for: $searchInt"
-            else listOfClients
+            if (listOfClients == "") {
+                "No items found for: $searchInt"
+            } else {
+                listOfClients
+            }
         }
     }
 
@@ -278,10 +275,10 @@ class ClientAPI (serializerType: Serializer)
      *searchAppointmentByDate()
      * function to search for an appointment by its treatments
      */
-    fun searchAppointmentByDate(searchString: String): String
-    {
-        return if (numberOfClients() == 0) "No clients stored"
-        else {
+    fun searchAppointmentByDate(searchString: String): String {
+        return if (numberOfClients() == 0) {
+            "No clients stored"
+        } else {
             var listOfClients = ""
             for (client in clients) {
                 for (appointment in client.appointments) {
@@ -290,89 +287,92 @@ class ClientAPI (serializerType: Serializer)
                     }
                 }
             }
-            if (listOfClients== "") "No items found for: $searchString"
-            else listOfClients
+            if (listOfClients == "") {
+                "No items found for: $searchString"
+            } else {
+                listOfClients
+            }
         }
     }
-
 
     /**
      * searchAppointmentByRating
      * function to search for an appointment by their rating
      */
-    fun searchAppointmentByRating(searchInt: Int): String
-    {
-        return if (numberOfClients() == 0) "No clients stored"
-        else {
+    fun searchAppointmentByRating(searchInt: Int): String {
+        return if (numberOfClients() == 0) {
+            "No clients stored"
+        } else {
             var listOfClients = ""
             for (client in clients) {
                 for (appointment in client.appointments) {
-                    if (appointment.rating == searchInt){
+                    if (appointment.rating == searchInt) {
                         listOfClients += "${client.clientId}: ${client.firstName} ${client.lastName} \n\t${appointment}\n"
                     }
                 }
             }
-            if (listOfClients== "") "No items found for: $searchInt"
-            else listOfClients
+            if (listOfClients == "") {
+                "No items found for: $searchInt"
+            } else {
+                listOfClients
+            }
         }
     }
-
 
     /**
      * searchAppointmentByCost
      * function to search for an appointment by their cost
      */
-    fun searchAppointmentByCost(searchInt: Int): String
-    {
-        return if (numberOfClients() == 0) "No clients stored"
-        else {
+    fun searchAppointmentByCost(searchInt: Int): String {
+        return if (numberOfClients() == 0) {
+            "No clients stored"
+        } else {
             var listOfClients = ""
             for (client in clients) {
                 for (appointment in client.appointments) {
-                    if (appointment.cost == searchInt){
+                    if (appointment.cost == searchInt) {
                         listOfClients += "${client.clientId}: ${client.firstName} ${client.lastName} \n\t${appointment}\n"
                     }
                 }
             }
-            if (listOfClients== "") "No items found for: $searchInt"
-            else listOfClients
+            if (listOfClients == "") {
+                "No items found for: $searchInt"
+            } else {
+                listOfClients
+            }
         }
     }
-
 
     /**
      * searchAppointmentByTime
      * function to search for an appointment by their time
      */
-    fun searchAppointmentByTime(searchDouble: Double): String
-    {
-        return if (numberOfClients() == 0) "No clients stored"
-        else {
+    fun searchAppointmentByTime(searchDouble: Double): String {
+        return if (numberOfClients() == 0) {
+            "No clients stored"
+        } else {
             var listOfClients = ""
             for (client in clients) {
                 for (appointment in client.appointments) {
-                    if (appointment.time == searchDouble){
+                    if (appointment.time == searchDouble) {
                         listOfClients += "${client.clientId}: ${client.firstName} ${client.lastName} \n\t${appointment}\n"
                     }
                 }
             }
-            if (listOfClients== "") "No items found for: $searchDouble"
-            else listOfClients
+            if (listOfClients == "") {
+                "No items found for: $searchDouble"
+            } else {
+                listOfClients
+            }
         }
     }
 
-
-
-
-
-//Other functions
+// Other functions
     /**
      * checkIfThereAreClients
      */
-    fun checkIfThereAreClients(): String
-    {
-        if (clients.isNotEmpty())
-        {
+    fun checkIfThereAreClients(): String {
+        if (clients.isNotEmpty()) {
             return "There are clients in the system"
         } else if (clients.isEmpty()) {
             return "There are no clients in the system"
@@ -381,48 +381,37 @@ class ClientAPI (serializerType: Serializer)
         }
     }
 
-
     /**
      * Persistence functions
      * loads clients to persistent storage file
      * saves clients in persistent storage file
      */
     @Throws(Exception::class)
-    fun load()
-    {
+    fun load() {
         clients = serializer.read() as ArrayList<Client>
     }
 
-
     @Throws(Exception::class)
-    fun store()
-    {
+    fun store() {
         serializer.write(clients)
     }
 
-
-
-//Helper functions
+// Helper functions
     /**
      * getClientId()
      * function to get client's id
      */
     private var lastClientId = 0
-     fun getClientId() = lastClientId++
-
+    fun getClientId() = lastClientId++
 
     /**
      * helper function to find client using specific index number
      */
-    fun findClient(index: Int): Client?
-    {
-        return if (Utilities.isValidListIndex(index, clients))
-        {
+    fun findClient(index: Int): Client? {
+        return if (Utilities.isValidListIndex(index, clients)) {
             clients[index]
+        } else {
+            null
         }
-        else null
     }
-
 }
-
-

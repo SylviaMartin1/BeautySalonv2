@@ -1,34 +1,34 @@
-//1. Packages
+// 1. Packages
 package controllers
 
-import org.junit.jupiter.api.*
-import org.junit.jupiter.api.AfterEach
-import org.junit.jupiter.api.BeforeEach
-import persistence.XMLSerializer
-import java.io.File
-import models.Client
 import models.Appointment
+import models.Client
+import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.AfterEach
+import org.junit.jupiter.api.Nested
+import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertTrue
-import searchClientsByPhone
-import kotlin.test.DefaultAsserter.assertEquals
-import kotlin.test.assertEquals
+import org.junit.jupiter.api.Assertions.assertEquals
+import persistence.XMLSerializer
+import java.io.File
 
-//2. Import Statements
 
-//3. Class
+
+// 2. Import Statements
+
+// 3. Class
 class ClientAPITest {
     /**
      * Variables of the type 'Client' which contain no data
      */
-    private var Joan: Client? = null
-    private var Toni: Client? = null
-    private var Maya: Client? = null
-    private var Lynn: Client? = null
-    private var Maureen: Client? = null
+    private var joan: Client? = null
+    private var toni: Client? = null
+    private var maya: Client? = null
+    private var lynn: Client? = null
+    private var maureen: Client? = null
     private var populatedClients: ClientAPI? = ClientAPI(XMLSerializer(File("notes.xml")))
     private var emptyClients: ClientAPI? = ClientAPI(XMLSerializer(File("notes.xml")))
-
 
     /**
      * @BeforeEach annotation
@@ -43,7 +43,7 @@ class ClientAPITest {
         val appointmentFour = Appointment(3, 14.00, "15/12/2023", "Waxing", 40, 2, true)
         val appointmentFive = Appointment(4, 15.00, "15/12/2023", "Massage", 45, 5, true)
 
-        Joan = Client(
+        joan = Client(
             0,
             "Joan",
             "Jacob",
@@ -55,7 +55,7 @@ class ClientAPITest {
             true,
             mutableSetOf(appointmentOne)
         )
-        Toni = Client(
+        toni = Client(
             1,
             "Toni",
             "Terry",
@@ -67,7 +67,7 @@ class ClientAPITest {
             true,
             mutableSetOf(appointmentTwo)
         )
-        Maya = Client(
+        maya = Client(
             2,
             "Maya",
             "Matthew",
@@ -79,7 +79,7 @@ class ClientAPITest {
             true,
             mutableSetOf(appointmentThree)
         )
-        Lynn = Client(
+        lynn = Client(
             3,
             "Lynn",
             "Liam",
@@ -91,7 +91,7 @@ class ClientAPITest {
             false,
             mutableSetOf(appointmentFour)
         )
-        Maureen = Client(
+        maureen = Client(
             4,
             "Maureen",
             "Matthews",
@@ -104,14 +104,12 @@ class ClientAPITest {
             mutableSetOf(appointmentFive)
         )
 
-
-        //adding 5 Clients to the client api
-        populatedClients!!.addClient(Joan!!)
-        populatedClients!!.addClient(Toni!!)
-        populatedClients!!.addClient(Maya!!)
-        populatedClients!!.addClient(Lynn!!)
-        populatedClients!!.addClient(Maureen!!)
-
+        // adding 5 Clients to the client api
+        populatedClients!!.addClient(joan!!)
+        populatedClients!!.addClient(toni!!)
+        populatedClients!!.addClient(maya!!)
+        populatedClients!!.addClient(lynn!!)
+        populatedClients!!.addClient(maureen!!)
     }
 
     /**
@@ -121,20 +119,19 @@ class ClientAPITest {
      */
     @AfterEach
     fun tearDown() {
-        Joan = null
-        Toni = null
-        Maya = null
-        Lynn = null
-        Maureen = null
+        joan = null
+        toni = null
+        maya = null
+        lynn = null
+        maureen = null
         populatedClients = null
         emptyClients = null
     }
 
-
-    //Nested Class where notes are added to the ArrayList
+    // Nested Class where notes are added to the ArrayList
     @Nested
     inner class AddClient {
-        //Add Tests
+        // Add Tests
         /**
          * Tests if adding a client to the ArrayList increases the number of clients in the ArrayList
          * Tests if the client is added to the end of the ArrayList
@@ -145,10 +142,10 @@ class ClientAPITest {
                 Client(6, "William", "Jacob", "Red Street", "Waterford", "William@gmail.com", 123456789, "None", true)
             val initialNumberOfClients = populatedClients!!.numberOfClients()
 
-            Assertions.assertEquals(initialNumberOfClients, populatedClients!!.numberOfClients())
+            assertEquals(initialNumberOfClients, populatedClients!!.numberOfClients())
             assertTrue(populatedClients!!.addClient(newClient))
-            Assertions.assertEquals(initialNumberOfClients + 1, populatedClients!!.numberOfClients())
-            Assertions.assertEquals(newClient, populatedClients!!.findClient(populatedClients!!.numberOfClients() - 1))
+            assertEquals(initialNumberOfClients + 1, populatedClients!!.numberOfClients())
+            assertEquals(newClient, populatedClients!!.findClient(populatedClients!!.numberOfClients() - 1))
         }
 
         /**
@@ -159,24 +156,23 @@ class ClientAPITest {
         fun `adding a Note to an empty list adds to ArrayList`() {
             val newClient =
                 Client(6, "William", "Jacob", "Red Street", "Waterford", "William@gmail.com", 123456789, "None", true)
-            Assertions.assertEquals(0, emptyClients!!.numberOfClients())
+            assertEquals(0, emptyClients!!.numberOfClients())
             assertTrue(emptyClients!!.addClient(newClient))
-            Assertions.assertEquals(1, emptyClients!!.numberOfClients())
+            assertEquals(1, emptyClients!!.numberOfClients())
             assertEquals(newClient, emptyClients!!.findClient(emptyClients!!.numberOfClients() - 1))
         }
     }
 
-
-    //Nested Class where clients in the ArrayList are listed
+    // Nested Class where clients in the ArrayList are listed
     @Nested
     inner class ListClients {
-        //List all clients
+        // List all clients
         /**
          * Verifies that if the ArrayList is not empty, calling 'ListAllClients' lists all clients stored in the ArrayList
          */
         @Test
         fun `listAllClients returns Clients when ArrayList has clients stored`() {
-            Assertions.assertEquals(5, populatedClients!!.numberOfClients())
+           assertEquals(5, populatedClients!!.numberOfClients())
             val notesString = populatedClients!!.listAllClients().lowercase()
             assertTrue(notesString.contains("joan"))
             assertTrue(notesString.contains("toni"))
@@ -190,17 +186,17 @@ class ClientAPITest {
          */
         @Test
         fun `listAllClients returns No Clients Stored message when ArrayList is empty`() {
-            Assertions.assertEquals(0, emptyClients!!.numberOfClients())
+            assertEquals(0, emptyClients!!.numberOfClients())
             assertTrue(emptyClients!!.listAllClients().lowercase().contains("no clients"))
         }
 
-        //List paid clients
+        // List paid clients
         /**
          * Verifies that if the ArrayList is not empty, calling 'ListPaidClients' lists all Paid Clients
          */
         @Test
         fun `listPaidClients returns paid clients when ArrayList has paid clients stored`() {
-            Assertions.assertEquals(3, populatedClients!!.numberOfPaidClients())
+           assertEquals(3, populatedClients!!.numberOfPaidClients())
             val activeClientsString = populatedClients!!.listPaidClients().lowercase()
             assertTrue(activeClientsString.contains("joan"))
             assertTrue(activeClientsString.contains("toni"))
@@ -214,18 +210,17 @@ class ClientAPITest {
          */
         @Test
         fun `listPaidClients returns no paid clients stored when ArrayList is empty`() {
-            Assertions.assertEquals(0, emptyClients!!.numberOfPaidClients())
+           assertEquals(0, emptyClients!!.numberOfPaidClients())
             assertTrue(emptyClients!!.listPaidClients().lowercase().contains("no paid clients"))
         }
 
-
-        //List paid clients
+        // List paid clients
         /**
          * Verifies that if the ArrayList is not empty, calling 'ListUnPaidClients' lists all unPaid Clients
          */
         @Test
         fun `listUnPaidClients returns paid clients when ArrayList has unpaid clients stored`() {
-            Assertions.assertEquals(2, populatedClients!!.numberOfUnPaidClients())
+            assertEquals(2, populatedClients!!.numberOfUnPaidClients())
             val activeClientsString = populatedClients!!.listUnpaidClients().lowercase()
             assertFalse(activeClientsString.contains("joan"))
             assertFalse(activeClientsString.contains("toni"))
@@ -239,7 +234,7 @@ class ClientAPITest {
          */
         @Test
         fun `listUnPaidClients returns no paid clients stored when ArrayList is empty`() {
-            Assertions.assertEquals(0, emptyClients!!.numberOfUnPaidClients())
+            assertEquals(0, emptyClients!!.numberOfUnPaidClients())
             assertTrue(emptyClients!!.listUnpaidClients().lowercase().contains("no unpaid clients"))
         }
 
@@ -255,11 +250,9 @@ class ClientAPITest {
 
             assertEquals(expected, actual)
         }
-
     }
 
-
-    //Nested Class where clients in the ArrayList are counted
+    // Nested Class where clients in the ArrayList are counted
     @Nested
     inner class CountClients {
         /**
@@ -267,8 +260,8 @@ class ClientAPITest {
          */
         @Test
         fun numberOfClientsCalculatedCorrectly() {
-            Assertions.assertEquals(5, populatedClients!!.numberOfClients())
-            Assertions.assertEquals(0, emptyClients!!.numberOfClients())
+           assertEquals(5, populatedClients!!.numberOfClients())
+            assertEquals(0, emptyClients!!.numberOfClients())
         }
 
         /**
@@ -276,18 +269,17 @@ class ClientAPITest {
          */
         @Test
         fun numberOfPaidClientsCalculatedCorrectly() {
-            Assertions.assertEquals(3, populatedClients!!.numberOfPaidClients())
-            Assertions.assertEquals(0, emptyClients!!.numberOfPaidClients())
+           assertEquals(3, populatedClients!!.numberOfPaidClients())
+            assertEquals(0, emptyClients!!.numberOfPaidClients())
         }
-
 
         /**
          * verifies that the number of unpaid clients is calculated correctly
          */
         @Test
         fun numberOfUnPaidClientsCalculatedCorrectly() {
-            Assertions.assertEquals(2, populatedClients!!.numberOfUnPaidClients())
-            Assertions.assertEquals(0, emptyClients!!.numberOfUnPaidClients())
+            assertEquals(2, populatedClients!!.numberOfUnPaidClients())
+           assertEquals(0, emptyClients!!.numberOfUnPaidClients())
         }
 
         /**
@@ -301,8 +293,7 @@ class ClientAPITest {
         }
     }
 
-
-    //Nested Class where notes in the arrayList are updated
+    // Nested Class where notes in the arrayList are updated
     @Nested
     inner class UpdateNotes {
         /**
@@ -330,11 +321,9 @@ class ClientAPITest {
         /**
          * verifies that if
          */
-
-
     }
 
-    //Nested Class where notes are deleted from the arrayList
+    // Nested Class where notes are deleted from the arrayList
     @Nested
     inner class DeleteClients {
         /**
@@ -342,11 +331,10 @@ class ClientAPITest {
          */
         @Test
         fun `deleting a Note that does not exist, returns null`() {
-            Assertions.assertFalse(emptyClients!!.deleteClient(0))
-            Assertions.assertFalse(populatedClients!!.deleteClient(-1))
-            Assertions.assertFalse(populatedClients!!.deleteClient(8))
+            assertFalse(emptyClients!!.deleteClient(0))
+            assertFalse(populatedClients!!.deleteClient(-1))
+            assertFalse(populatedClients!!.deleteClient(8))
         }
-
 
         /**
          * verifies that clearAllClients() works
@@ -367,47 +355,45 @@ class ClientAPITest {
         }
     }
 
-    //Nested class to search clients
+    // Nested class to search clients
     @Nested
-    inner class searchClients {
+    inner class SearchClients {
 
         /**
          * to ensure findClientById() is correct
          */
         @Test
-            fun `findClientById should return correct client when ID exists`() {
-                val foundClient = populatedClients!!.findClientById(1) // Searching for client with ID 1
+        fun `findClientById should return correct client when ID exists`() {
+            val foundClient = populatedClients!!.findClientById(1) // Searching for client with ID 1
 
-                assertEquals("Toni", foundClient?.firstName)
-                assertEquals("Terry", foundClient?.lastName)
-                assertEquals("Orange Street", foundClient?.street)
-                assertEquals("Cork", foundClient?.county)
-                assertEquals("Toni@gmail.com", foundClient?.email)
-                assertEquals(112345678, foundClient?.phone)
-            }
-
-            @Test
-            fun `findClientById should return null when ID doesn't exist`() {
-                val foundClient = populatedClients!!.findClientById(10) // Searching for a non-existent client with ID 10
-
-                assertEquals(null, foundClient)
-            }
+            assertEquals("Toni", foundClient?.firstName)
+            assertEquals("Terry", foundClient?.lastName)
+            assertEquals("Orange Street", foundClient?.street)
+            assertEquals("Cork", foundClient?.county)
+            assertEquals("Toni@gmail.com", foundClient?.email)
+            assertEquals(112345678, foundClient?.phone)
         }
 
+        @Test
+        fun `findClientById should return null when ID doesn't exist`() {
+            val foundClient = populatedClients!!.findClientById(10) // Searching for a non-existent client with ID 10
+
+            assertEquals(null, foundClient)
+        }
+    }
 
     /**
      * Verifies that if notes are searched for by first name, no clients are returned when no clients with that first name exist
      */
     @Test
-    fun `search clients by first name returns no clients when no clients with that first name exist` ()
-    {
+    fun `search clients by first name returns no clients when no clients with that first name exist`() {
         // searching a populated collection for a title that doesn't exist
-        Assertions.assertEquals(5, populatedClients!!.numberOfClients())
+       assertEquals(5, populatedClients!!.numberOfClients())
         val searchResults = populatedClients!!.searchClientByFirstName("no results expected")
         assertTrue(searchResults.isEmpty())
 
-        //searching an empty collection
-        Assertions.assertEquals(0, emptyClients!!.numberOfClients())
+        // searching an empty collection
+        assertEquals(0, emptyClients!!.numberOfClients())
         assertTrue(emptyClients!!.searchClientByFirstName("").isEmpty())
     }
 
@@ -415,10 +401,9 @@ class ClientAPITest {
      * Verifies that if clients are searched for by first name, clients are returned when clients with that first name exist
      */
     @Test
-    fun `search clients by first name returns clients when clients with that first name exist` ()
-    {
-        Assertions.assertEquals(5, populatedClients!!.numberOfClients())
-        var searchResults = populatedClients!!.searchClientByFirstName("Joan")
+    fun `search clients by first name returns clients when clients with that first name exist`() {
+        assertEquals(5, populatedClients!!.numberOfClients())
+        val searchResults = populatedClients!!.searchClientByFirstName("Joan")
         assertTrue(searchResults.contains("Joan"))
         assertFalse(searchResults.contains("Toni"))
     }
@@ -427,10 +412,9 @@ class ClientAPITest {
      * Verifies that if clients are searched for by last name, clients are returned when clients with that last name exist
      */
     @Test
-    fun `search clients by last name returns clients when clients with that last name exist` ()
-    {
-        Assertions.assertEquals(5, populatedClients!!.numberOfClients())
-        var searchResults = populatedClients!!.searchClientByLastName("Jacob")
+    fun `search clients by last name returns clients when clients with that last name exist`() {
+        assertEquals(5, populatedClients!!.numberOfClients())
+        val searchResults = populatedClients!!.searchClientByLastName("Jacob")
         assertTrue(searchResults.contains("Jacob"))
         assertFalse(searchResults.contains("Terry"))
     }
@@ -439,10 +423,9 @@ class ClientAPITest {
      * Verifies that if clients are searched for by street, clients are returned when clients with that street exist
      */
     @Test
-    fun `search clients by street returns clients when clients with that street exist` ()
-    {
-        Assertions.assertEquals(5, populatedClients!!.numberOfClients())
-        var searchResults = populatedClients!!.searchClientByStreet("Red Street")
+    fun `search clients by street returns clients when clients with that street exist`() {
+        assertEquals(5, populatedClients!!.numberOfClients())
+        val searchResults = populatedClients!!.searchClientByStreet("Red Street")
         assertTrue(searchResults.contains("Red Street"))
         assertFalse(searchResults.contains("Orange Street"))
     }
@@ -451,10 +434,9 @@ class ClientAPITest {
      * Verifies that if clients are searched for by county, clients are returned when clients with that county exist
      */
     @Test
-    fun `search clients by county returns clients when clients with that county exist` ()
-    {
-        Assertions.assertEquals(5, populatedClients!!.numberOfClients())
-        var searchResults = populatedClients!!.searchClientByCounty("Waterford")
+    fun `search clients by county returns clients when clients with that county exist`() {
+       assertEquals(5, populatedClients!!.numberOfClients())
+        val searchResults = populatedClients!!.searchClientByCounty("Waterford")
         assertTrue(searchResults.contains("Waterford"))
         assertFalse(searchResults.contains("Cork"))
     }
@@ -463,49 +445,21 @@ class ClientAPITest {
      * Verifies that if clients are searched for by email, clients are returned when clients with that email exist
      */
     @Test
-    fun `search clients by email returns clients when clients with that email exist` ()
-    {
-        Assertions.assertEquals(5, populatedClients!!.numberOfClients())
-        var searchResults = populatedClients!!.searchClientByEmail("Joan@gmail.com")
+    fun `search clients by email returns clients when clients with that email exist`() {
+        assertEquals(5, populatedClients!!.numberOfClients())
+        val searchResults = populatedClients!!.searchClientByEmail("Joan@gmail.com")
         assertTrue(searchResults.contains("Joan@gmail.com"))
         assertFalse(searchResults.contains("Toni@gmail.com"))
     }
-
 
     /**
      * Verifies that if clients are searched for by allergy, clients are returned when clients with that allergy exist
      */
     @Test
-    fun `search clients by allergy returns clients when clients with that allergy exist` ()
-    {
-        Assertions.assertEquals(5, populatedClients!!.numberOfClients())
-        var searchResults = populatedClients!!.searchClientByAllergy("None")
+    fun `search clients by allergy returns clients when clients with that allergy exist`() {
+       assertEquals(5, populatedClients!!.numberOfClients())
+        val searchResults = populatedClients!!.searchClientByAllergy("None")
         assertTrue(searchResults.contains("None"))
         assertFalse(searchResults.contains("Sulfates"))
     }
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

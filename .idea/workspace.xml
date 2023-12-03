@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f4d87e7-65f7-414c-b707-75521f7541c4" name="Changes" comment="Create appointment and client data models">
+    <list default="true" id="7f4d87e7-65f7-414c-b707-75521f7541c4" name="Changes" comment="Add functions to test clientApi functions">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/controllers/ClientAPI.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/controllers/ClientAPI.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/models/Appointment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/models/Appointment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/models/Client.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/models/Client.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/utils/Utilities.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/utils/Utilities.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/utils/ScannerInput.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/utils/ScannerInput.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/controllers/ClientAPITest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/controllers/ClientAPITest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,18 +41,23 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Object" />
         <option value="Kotlin Class" />
+        <option value="Kotlin Interface" />
+        <option value="Kotlin Object" />
+        <option value="Kotlin File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="JUnit-tests-clients" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -64,16 +72,16 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "manipulate-collections",
+    "git-widget-placeholder": "master",
     "last_opened_file_path": "C:/Users/sylvi/OneDrive - South East Technological University (Waterford Campus)/Semester Three/Software Development Tools/BeautySalonv2",
-    "project.structure.last.edited": "SDKs",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settings.ide.settings.notifications"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="BeautySalonV2 [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.BeautySalonv2 [ktlintFormat]">
+    <configuration name="BeautySalonv2 [dokkaHtml]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -84,7 +92,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="build" />
+            <option value="dokkaHtml" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -95,7 +103,7 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="BeautySalonV2 [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="BeautySalonv2 [jacocoTestCoverageVerification]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -106,7 +114,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="clean" />
+            <option value="jacocoTestCoverageVerification" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -115,12 +123,85 @@
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="BeautySalonv2 [ktlintFormat]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="ktlintFormat" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ClientAPITest.search clients by allergy returns clients when clients with that allergy exist" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;controllers.ClientAPITest.search clients by allergy returns clients when clients with that allergy exist&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="ClientAPITest.search clients by phone returns clients when clients with that phone exist" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;controllers.ClientAPITest.search clients by phone returns clients when clients with that phone exist&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.BeautySalonV2 [build]" />
-        <item itemvalue="Gradle.BeautySalonV2 [clean]" />
+        <item itemvalue="Gradle.BeautySalonv2 [ktlintFormat]" />
+        <item itemvalue="Gradle.BeautySalonv2 [jacocoTestCoverageVerification]" />
+        <item itemvalue="Gradle.BeautySalonv2 [dokkaHtml]" />
+        <item itemvalue="Gradle.ClientAPITest.search clients by allergy returns clients when clients with that allergy exist" />
+        <item itemvalue="Gradle.ClientAPITest.search clients by phone returns clients when clients with that phone exist" />
       </list>
     </recent_temporary>
   </component>
@@ -277,7 +358,95 @@
       <option name="project" value="LOCAL" />
       <updated>1701542585399</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Create appointment and client data models">
+      <option name="closed" value="true" />
+      <created>1701553928766</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1701553928767</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Configure the main.kt file">
+      <option name="closed" value="true" />
+      <created>1701591064714</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1701591064715</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Add colour and emojis to UI">
+      <option name="closed" value="true" />
+      <created>1701595533707</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1701595533709</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Add JSON and XML">
+      <option name="closed" value="true" />
+      <created>1701596609202</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1701596609202</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Implement persistence functions">
+      <option name="closed" value="true" />
+      <created>1701597610815</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1701597610816</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Add validation to phone number">
+      <option name="closed" value="true" />
+      <created>1701600842843</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1701600842843</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Add validation to treatments">
+      <option name="closed" value="true" />
+      <created>1701601039579</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1701601039579</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Add validation to email">
+      <option name="closed" value="true" />
+      <created>1701602672819</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1701602672819</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Add validation to date">
+      <option name="closed" value="true" />
+      <created>1701602856345</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1701602856345</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Add functions to initialise and clean up the environment before and after testing">
+      <option name="closed" value="true" />
+      <created>1701605457663</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1701605457663</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Add functions to test clientApi functions">
+      <option name="closed" value="true" />
+      <created>1701620511128</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1701620511128</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -304,7 +473,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Testing commit and push" />
     <MESSAGE value="Testing if everything is working" />
     <MESSAGE value="Create Client and Appointment data classes" />
     <MESSAGE value="Create functions to manipulate appointment set" />
@@ -320,7 +488,17 @@
     <MESSAGE value="Create addClient() function" />
     <MESSAGE value="Ensure use of DRY code" />
     <MESSAGE value="Create appointment and client data models" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create appointment and client data models" />
+    <MESSAGE value="Configure the main.kt file" />
+    <MESSAGE value="Add colour and emojis to UI" />
+    <MESSAGE value="Add JSON and XML" />
+    <MESSAGE value="Implement persistence functions" />
+    <MESSAGE value="Add validation to phone number" />
+    <MESSAGE value="Add validation to treatments" />
+    <MESSAGE value="Add validation to email" />
+    <MESSAGE value="Add validation to date" />
+    <MESSAGE value="Add functions to initialise and clean up the environment before and after testing" />
+    <MESSAGE value="Add functions to test clientApi functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add functions to test clientApi functions" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
