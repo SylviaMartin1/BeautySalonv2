@@ -2,10 +2,12 @@
 import controllers.ClientAPI
 import models.Appointment
 import models.Client
+import persistence.JSONSerializer
 import utils.ScannerInput
 import utils.ScannerInput.readNextDouble
 import utils.ScannerInput.readNextInt
 import utils.ScannerInput.readNextLine
+import java.io.File
 import kotlin.system.exitProcess
 
 
@@ -13,7 +15,8 @@ import kotlin.system.exitProcess
 /**
  * holds clientAPI class as an object
  */
-private val clientAPI = ClientAPI()
+//private val noteAPI = NoteAPI(XMLSerializer(File("notes.xml")))
+private val clientAPI = ClientAPI(JSONSerializer(File("notes.json")))
 
 
 //3. Methods
@@ -738,6 +741,35 @@ private fun askUserToChooseAppointment(Client: Client): Appointment?
     } else {
         println("No items for chosen note")
         return null
+    }
+}
+
+//Persistence Functions
+/**
+ * 36. save()
+ * XML and JSO
+ * Method to save notes in persistent storage file
+ */
+fun save()
+{
+    try {
+        clientAPI.store()
+    } catch (e: Exception) {
+        System.err.println("Error writing to file: $e")
+    }
+}
+
+/**
+ * load()
+ * JSON and XML
+ * method to load notes to persistent storage file
+ */
+fun load()
+{
+    try {
+        clientAPI.load()
+    } catch (e: Exception) {
+        System.err.println("Error reading from file: $e")
     }
 }
 
