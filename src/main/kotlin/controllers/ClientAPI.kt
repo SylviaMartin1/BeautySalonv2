@@ -10,19 +10,27 @@ package controllers
 /**
  * Imports 'Client' so that it can be used in this file
  */
+import models.Appointment
 import models.Client
 import utils.ScannerInput
 import utils.Utilities
 import java.util.ArrayList
+import persistence.Serializer
 
 
-class ClientAPI
+class ClientAPI (serializerType: Serializer)
 {
 //3. Variables
     /**
      * ArrayList to hold collection of clients
      */
     private var clients = ArrayList<Client>()
+
+    /**
+     * Serializer object
+     */
+    private var serializer: Serializer = serializerType
+
 
 
 //4. Functions
@@ -374,6 +382,26 @@ class ClientAPI
     }
 
 
+    /**
+     * Persistence functions
+     * loads clients to persistent storage file
+     * saves clients in persistent storage file
+     */
+    @Throws(Exception::class)
+    fun load()
+    {
+        clients = serializer.read() as ArrayList<Client>
+    }
+
+
+    @Throws(Exception::class)
+    fun store()
+    {
+        serializer.write(clients)
+    }
+
+
+
 //Helper functions
     /**
      * getClientId()
@@ -381,5 +409,6 @@ class ClientAPI
      */
     private var lastClientId = 0
     private fun getClientId() = lastClientId++
-}
 
+
+}
