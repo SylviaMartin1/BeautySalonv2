@@ -45,5 +45,84 @@ The 'ScannerInput' class avails of the Java.Util.Scanner class and ensures that 
     - kotlin is the 2nd most popular JVM language.
     - kotlin is often used in android development, server-side development and mobile multiplatform development.
     - kotlin is used by many large companies including Netflix, Trello, Uber and Pinterest
+ 
+   ## 💠[Features](##Features)
+This project adheres to the Single Responsibility Principle by ensuring each set of Kotlin classes/files handle only one unique responsibility:
+- The 'Main' file handles the code which relates to user input.
+- The 'Client' class handles the code which relates to Note objects.
+- The 'Appointment' class handles the code which relates to Client objects.
+- The 'ClientApi' class handles the code which relates to an ArrayList which holds a number of Client objects.
+- The 'ClientApiTest' class handles the code which relates to tests carried out on the functions in the 'ClientApi' class.
+- The 'TreatmentUtilityTest' class handles the code which relates to tests carried out on the functions in the 'TreatmentUtility' object.
+- The 'DateUtilityTest' class handles the code which relates to tests carried out on the functions in the 'DateUtility' object.
+- The 'EmailUtilityTest' class handles the code which relates to tests carried out on the functions in the 'EmailUtility' object.
+- The 'UtilitiesTest' class handles the code which relates to tests carried out on the functions in the 'Utilities' object.
+- The 'Serializer' interface class, 'XML Serializer' file and'JSON Serializer' file handle code which relates to saving notes to and loading notes from a persistent storage file.
+- The 'TreatmentUtility' object handles the code which relates to validation on user input of the noteCategory field.
+- The 'DateUtility' object handles the code which relates to validation on user input of the date fields.
+- The 'EmailUtility' object handles the code which relates to validation on user input of the noteStatus field.
+- The 'ValidateInputClass' object handles the code which relates to ensuring prompts entered to users return valid responses.
+- The 'Utilities' object handles the code which relates to ensuring indexes entered by users are within specific ranges.
+  
+The project is based on the Model View Presenter (MVP) architecture.
+- The Models are the 'Client' and 'Appointment' classes as they store the application's data.
+- The View is the 'Main' class as it
+  - acts as a user interface
+  - displays the Model
+  - routes user commands to the Presenter to act upon the Model
+- The Presenter is the 'ClientApi' class as it fetches the data from the Model and formats it for display in the View.
 
+This application consists of:
+- Functions in the 'Main.kt' file
+  - mainMenu() to display a menu for user input
+  - runMenu() to loop the mainMenu() to process the user's input
+  - main() to run the program and call the runMenu() function
+  - addNote() to allow users to add notes to the system
+  - listNotes() to allow users to avail of the options between listing all notes, all archived notes, all active notes, all notes by priority, all notes by title, all notes by category, 
+  all notes by creation, all notes by last viewing date, all notes by author and all notes by note status stored in the system
+  - listNumberOfNotes() to allow users to avail of the options between listing the number of all notes, all archived notes, all active notes, all notes by priority, all notes by title, all notes by category, 
+  all notes by creation, all notes by last viewing date, all notes by author and all notes by note status stored in the system
+  - updateNote() to allow users to update notes that exist in the system
+  - deleteNote() to allow users to delete notes from the system
+  - clearAllNotes() to allow users to delete all notes from the system
+  - checkIfThereAreNotes to allow users to check if there are notes in the system
+  - archiveNote() to allow users to archive notes that exist in the system
+  - exitApp() to allow users to exit the application
+  - load() to load data
+  - save() to save data
+    
+- A data class called 'Client' in the 'Client.kt' class to represent single client data classes in the application. The data class consists of the following fields:
+  - firstName(of type String)
+  - lastName(of type String)
+  - phone(of type Int)
+  - hasPaid(of type Boolean)
+  - street(of type String)
+  - county(of type String)
+  - allergy(of type String)
+  - a mutable set of appointments
+- A data class called 'Appointment' in the 'Appointment.kt' class to represent single appointment data classes in the application. The data class consists of the following fields:
+  - time(of type String)
+  - date(of type String)
+  - rating(of type Int)
+  - isConfirmed (of type Boolean)
+  - treatment(of type String)
+  - cost(of type Int)
+      
+- An arrayList called 'clients' in the 'ClientApi.kt' class to hold a number of Client data classes. The class consists of functions to carry out the following actions:
+    - Adding clients
+    - Listing clients
+    - Updating clients
+    - Deleting clients
+    - Clearing all clients
+    - Checking if there are clients
+    - Searching for clients by their first name, id, last name, street, county, email, phone or allergy
+ - A mutable set called 'appointments' in the 'Client.kt' class to hold a number of Appointment data classes. The set consists of functions to carry out the following actions:
+    - Adding appointments
+    - Listing confirmed appointments
+    - Updating appointments
+    - Deleting appointments
+    - Searching appointments by their Id, time, date, treatment, cost, rating
+    - get an appointment's id
+
+   
 
