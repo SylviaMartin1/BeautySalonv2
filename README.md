@@ -120,6 +120,59 @@ This application consists of:
     - Deleting appointments
     - Searching appointments by their Id, time, date, treatment, cost, rating
     - get an appointment's id
+- A series of tests in the 'NoteApiTest.kt' class to verify the functions in the 'notes' arrayList work using the JUnit5 testing framework.
+- JSON and XML persistence files and methods to load clients to and save clients in a persistent storage file.
+- Utilities are used to include user validation on email, treatment, date, phone, rating, time
+
+
+## 💠[Accessibility](##Accessibility)
+ Accessibility is implemented in the app in the following ways:
+- all notes are written in simple language 
+- emojis created using emojipedia and unicode escape sequence variables are placed in front of and after the instructions in the main menu in order to make them easier to comprehend
+- colours created using ANSI escape sequences are used to differentiate between different actions, events and sentences in the application
+
+## 💠[Usage](##Usage)
+As the app was written in the Kotlin programming language, users can avail of the following software to run the application:
+- IntelliJ Idea
+- Android Studio
+- Visual Studio Code (with Kotlin extensions)
+- Netbeans (with Kotlin plugin)
+- Eclipse (with Kotlin plugin)
+
+
+## 💠[Support](##Support)
+To get assistance with the app, make enquiries relating to the app or to provide feedback about the app, users can either:
+- message the 'SylviaMartin1' Github account
+- email the '20102981@mail.wit.ie' email address
+
+
+## 💠[Contribution](##Contribution)
+- Create your own copy of the repository using the 'Fork' button on the top right corner
+- Create a new branch for your changes and give it a descriptive name that outlines the bug or feature you wish to change. ➡️command: *git checkout -b*
+- Create your changes
+- Commit your changes ➡️command: *git commit -m*
+- Push your changes ➡️command: *git push*
+- Submit a pull request from your branch to the main repository and describe the changes you made and explain why they are useful 
+- Once your changes have been reviewed and approved, they will be merged into the main repository and you will be credited in the readMe file
+
+
+## 💠[Guidelines](##Guidelines)
+Contributions to the project are welcomed and encouraged. However, to contribute you must agree to the following:
+> [!NOTE]
+> Proper attribution to the project and its original authors is required.
+
+> [!IMPORTANT]
+> Contributions should be made openly and transparently. Secretive or proprietary development is not permitted.
+
+> [!WARNING]
+> Contributions do not grant ownership of the project or the ability to claim it as one's own.
+
+📍**Thank you for contributing to my open-source project!** :smile: :thumbsup: 
+
+## 💠[Acknowledgements](##Acknowledgements)
+📍I'd like to acknowledge and thank my mentor 'sdrohan' on Github who provided guidance and expertise throughout the development of this project.
+
+
 
    
 
