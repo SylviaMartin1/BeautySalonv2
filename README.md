@@ -49,8 +49,8 @@ The 'ScannerInput' class avails of the Java.Util.Scanner class and ensures that 
    ## 💠[Features](##Features)
 This project adheres to the Single Responsibility Principle by ensuring each set of Kotlin classes/files handle only one unique responsibility:
 - The 'Main' file handles the code which relates to user input.
-- The 'Client' class handles the code which relates to Note objects.
-- The 'Appointment' class handles the code which relates to Client objects.
+- The 'Client' class handles the code which relates to Client objects.
+- The 'Appointment' class handles the code which relates to Appointment objects.
 - The 'ClientApi' class handles the code which relates to an ArrayList which holds a number of Client objects.
 - The 'ClientApiTest' class handles the code which relates to tests carried out on the functions in the 'ClientApi' class.
 - The 'TreatmentUtilityTest' class handles the code which relates to tests carried out on the functions in the 'TreatmentUtility' object.
@@ -77,16 +77,13 @@ This application consists of:
   - mainMenu() to display a menu for user input
   - runMenu() to loop the mainMenu() to process the user's input
   - main() to run the program and call the runMenu() function
-  - addNote() to allow users to add notes to the system
-  - listNotes() to allow users to avail of the options between listing all notes, all archived notes, all active notes, all notes by priority, all notes by title, all notes by category, 
-  all notes by creation, all notes by last viewing date, all notes by author and all notes by note status stored in the system
-  - listNumberOfNotes() to allow users to avail of the options between listing the number of all notes, all archived notes, all active notes, all notes by priority, all notes by title, all notes by category, 
-  all notes by creation, all notes by last viewing date, all notes by author and all notes by note status stored in the system
-  - updateNote() to allow users to update notes that exist in the system
-  - deleteNote() to allow users to delete notes from the system
-  - clearAllNotes() to allow users to delete all notes from the system
-  - checkIfThereAreNotes to allow users to check if there are notes in the system
-  - archiveNote() to allow users to archive notes that exist in the system
+  - addClient() to allow users to add notes to the system
+  - listClients() to allow users to avail of the options between listing all clients, all paid client and all unpaid clients
+  - updateClient() to allow users to update clients that exist in the system
+  - deleteClient() to allow users to delete clients from the system
+  - clearAllClients() to allow users to delete all clients from the system
+  - checkIfThereAreClients to allow users to check if there are clients in the system
+  - functions to allow users to search for clients by different attributes they have
   - exitApp() to allow users to exit the application
   - load() to load data
   - save() to save data
