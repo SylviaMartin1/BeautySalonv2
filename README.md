@@ -20,19 +20,19 @@ This project is a simple management app created using Gradle Build Software and 
 ## 	💠[Introduction](##Introduction)
 This application uses a simple menu system paired with a utility called 'ScannerInput' to give users the choice between:
 
-Adding clients
-Listing clients
-Updating clients
-Deleting clients
-Clearing all clients
-Checking if there are clients
-Searching for clients by their first name, id, last name, street, county, email, phone or allergy
-Adding appointments
-Listing confirmed appointments
-Updating appointments
-Deleting appointments
-Searching appointments by their Id, time, date, treatment, cost, rating
-Exiting the app
+- Adding clients
+- Listing clients
+- Updating clients
+- Deleting clients
+- Clearing all clients
+- Checking if there are clients
+- Searching for clients by their first name, id, last name, street, county, email, phone or allergy
+- Adding appointments
+- Listing confirmed appointments
+- Updating appointments
+- Deleting appointments
+- Searching appointments by their Id, time, date, treatment, cost, rating
+- Exiting the app
 The 'ScannerInput' class avails of the Java.Util.Scanner class and ensures that in the event the user enters the wrong datatype, they are prompted to enter the correct datatype and thus the program doesn't crash and their error is handled delicately. The utility also allows the program to bypass a Java Scanner class bug where the class doesn't flush its buffers correctly after reading an Int or Double. I created this project because:
 
 I wanted to become more proficient in operating the Gradle Build System
